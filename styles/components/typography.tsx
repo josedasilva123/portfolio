@@ -1,8 +1,14 @@
 import React from 'react'
 
+interface iMargin{
+    top?: string;
+    bottom?: string;
+}
+
 interface iTitle{
     className?: string;
     children: React.ReactNode; 
+    titleMargin?: iMargin;
     titleTag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     titleSize: 'headline' | 'title1' | 'title2' | 'title3';
     titleColor?: 'white' | 'primary' | 'secondary'; 
@@ -11,12 +17,14 @@ interface iTitle{
 interface iLabel{
     className?: string;
     children: React.ReactNode; 
+    labelMargin?: iMargin;
     labelColor?: 'white' | 'primary' | 'secondary'; 
 }
 
 interface iParagraph{
     className?: string;
     children: React.ReactNode;
+    paragraphMargin?: iMargin;
     paragraphColor?: 'white' | 'primary' | 'secondary'; 
 }
 
