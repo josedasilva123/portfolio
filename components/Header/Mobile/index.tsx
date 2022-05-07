@@ -5,6 +5,9 @@ import { Container, FlexRow } from "../../../styles/grid";
 import { MobileMenu, StyledMobileHeader } from "./styles";
 import { ThemeButton } from "../../../styles/buttons";
 
+import Logo from "../Logo";
+import NavMenu from "../NavMenu";
+
 const MobileHeader: React.FC = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -14,9 +17,7 @@ const MobileHeader: React.FC = () => {
           alignItems={{ default: "center" }}
           justifyContent={{ default: "space-between" }}
         >
-          <h1>
-            Alex <b>Conder</b>
-          </h1>   
+          <Logo />  
           <div> 
             <button onClick={() => setOpen(!open)}>
                 {open ? (
@@ -32,18 +33,8 @@ const MobileHeader: React.FC = () => {
         </FlexRow>
       </Container>
       {open && (
-          <MobileMenu className="menu">
-          <ul>
-            <li>Sobre</li>
-            <li>Projetos</li>
-          </ul>
-          <ThemeButton
-            buttonSize="md"
-            buttonStyle="solid1"
-            onClick={() => alert("Oi")}
-          >
-            QUERO CONTRATAR
-          </ThemeButton>
+        <MobileMenu className="menu">
+          <NavMenu />          
         </MobileMenu>
       )}
     </StyledMobileHeader>

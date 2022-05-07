@@ -3,6 +3,10 @@ import { ThemeButton } from "../../../styles/buttons";
 import { Col, Container, FlexRow } from "../../../styles/grid";
 import { StyledHeader } from "./styles";
 
+import Logo from "../Logo";
+import NavMenu from "../NavMenu";
+
+
 const DesktopHeader: React.FC = () => {
   return (
     <StyledHeader>
@@ -12,9 +16,7 @@ const DesktopHeader: React.FC = () => {
           justifyContent={{ default: "space-between" }}
         >
           <Col size={{ default: "100%" }}>
-            <h1>
-              Alex <b>Conder</b>
-            </h1>
+              <Logo />
           </Col>
           <Col size={{ default: "100%" }}>
             <FlexRow
@@ -22,10 +24,7 @@ const DesktopHeader: React.FC = () => {
               justifyContent={{ default: "flex-end" }}
             >
               <nav className="menu">
-                <ul>
-                  <li>Sobre</li>
-                  <li>Projetos</li>
-                </ul>
+                <NavMenu />
                 <ThemeButton
                   buttonSize="md"
                   buttonStyle="solid1"

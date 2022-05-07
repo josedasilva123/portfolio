@@ -2,15 +2,17 @@ import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
     padding: .6rem 0;
+
     h1{
-        font-family: 'Roboto Monospace', monospace;
-        font-weight: 400;
+        font-family: 'Roboto Mono', monospace;
+        font-weight: 300;
         font-size: 1.6rem;
         color: var(--colorWhite);
         b{
-            font-family: 'Roboto Monospace', monospace;   
+            font-family: 'Roboto Mono', monospace;   
         }
     }
+
     nav{
         display: flex;
         align-items:  center;

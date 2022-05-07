@@ -3,15 +3,17 @@ import styled from "styled-components";
 export const StyledMobileHeader = styled.header`
   padding: 0.4rem 0;
   position: relative;
+
   h1 {
-    font-family: "Roboto Monospace", monospace;
-    font-weight: 400;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
     font-size: 1.4rem;
     color: var(--colorWhite);
     b {
-      font-family: "Roboto Monospace", monospace;
+      font-family: "Roboto Mono", monospace;
     }
   }
+
   div{
     display: flex;
     align-items: center;
