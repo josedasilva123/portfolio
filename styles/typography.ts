@@ -1,9 +1,10 @@
 import styled, {css} from "styled-components";
 import { BaseTitle, BaseLabel, BaseParagraph } from "./components/typography";
-import { fontColor } from "./functions/fontcolor";
+import { FONT_PRIMARY, FONT_SECONDARY } from "./config/fonts";
+import { fontColor, fontFamily } from "./functions/typography";
 
 export const ThemeTitle = styled(BaseTitle)`
-    font-family: 'Roboto Mono', monospace;
+    ${() => fontFamily(FONT_PRIMARY)};
     line-height: 1.3;
 
     margin-top: ${(props) => props.titleMargin?.top};
@@ -64,15 +65,24 @@ export const ThemeTitle = styled(BaseTitle)`
 `
 
 export const ThemeLabel = styled(BaseLabel)`
-    //Cores de rótulo
     display: block;
-    font-family: 'Roboto Mono', monospace;   
+    ${() => fontFamily(FONT_PRIMARY)};   
     font-weight: 600; 
     font-size: 16px;
     letter-spacing: .2em;
 
     margin-top: ${(props) => props.labelMargin?.top};
     margin-bottom: ${(props) => props.labelMargin?.bottom};
-    
+    //Cores do rótulo
     ${(props) => fontColor(props.labelColor)}   
+`
+
+export const ThemeParagraph = styled(BaseParagraph)`
+    ${() => fontFamily(FONT_SECONDARY)};
+    font-size: 16px;
+
+    margin-top: ${(props) => props.paragraphMargin?.top};
+    margin-bottom: ${(props) => props.paragraphMargin?.bottom};
+    //Cores do parágrafo
+    ${(props) => fontColor(props.paragraphColor)}   
 `
