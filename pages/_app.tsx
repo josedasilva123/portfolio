@@ -15,9 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <GlobalStorage>
-        <Header />
-        <Component {...pageProps} />
         <GlobalStyle />
+        <Header />
+        <Component {...pageProps} />        
       </GlobalStorage>
     </>
   );
