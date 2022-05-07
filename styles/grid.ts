@@ -57,6 +57,7 @@ export const Container = styled(BaseContainer)`
 
 //Row com display flex configurável
 export const FlexRow = styled(BaseFlexRow)`
+  width: 100%;
   display: flex;
   gap: ${(props) => props.gap};
   align-items: ${(props) =>
