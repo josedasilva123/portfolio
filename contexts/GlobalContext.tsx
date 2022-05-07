@@ -4,6 +4,7 @@ import {useState, useEffect, createContext} from 'React';
 interface iGlobalContext{
     darkMode: boolean,
     toggleDarkMode: () => void;
+    mobile: boolean,
 }
 
 interface iGlobalStorage{
@@ -13,8 +14,24 @@ interface iGlobalStorage{
 export const GlobalContext = createContext<iGlobalContext | null>(null);
 
 export const GlobalStorage: React.FC<iGlobalStorage> = ({ children }) => {
+    //Mobile 
+    const [mobile, setMobile] = useState(false);
     //Dark Mode DEFAULT
     const [darkMode, setDarkMode] = useState(true);
+
+    //Inserção do evento mobile na montagem
+    useEffect(() => {
+        function checkMobile(){
+            if(window.innerWidth < 768){
+                setMobile(true);
+            } else {
+                setMobile(false);
+            }
+        }
+        //Checa a resolução na montagem e aplica o evento a verificação a janela
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+    }, []);
 
     //Efeito para carregar estilo selecionado
     useEffect(() => {
@@ -25,8 +42,7 @@ export const GlobalStorage: React.FC<iGlobalStorage> = ({ children }) => {
         } else {
             setDarkMode(true);
         }
-
-    }, [])
+    }, []);
 
     //Função de troca de estilo
     function toggleDarkMode(){
@@ -40,7 +56,7 @@ export const GlobalStorage: React.FC<iGlobalStorage> = ({ children }) => {
     }
 
     return (
-        <GlobalContext.Provider value={{darkMode, toggleDarkMode}}>
+        <GlobalContext.Provider value={{darkMode, toggleDarkMode, mobile}}>
             {children}
         </GlobalContext.Provider>
     )
