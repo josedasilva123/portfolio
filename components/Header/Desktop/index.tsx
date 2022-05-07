@@ -25,13 +25,7 @@ const DesktopHeader: React.FC = () => {
             >
               <nav className="menu">
                 <NavMenu />
-                <ThemeButton
-                  buttonSize="md"
-                  buttonStyle="solid1"
-                  onClick={() => alert("Oi")}
-                >
-                  QUERO CONTRATAR
-                </ThemeButton>
+         
               </nav>
             </FlexRow>
           </Col>
