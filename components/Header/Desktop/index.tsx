@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeButton } from "../../../styles/buttons";
 import { Col, Container, FlexRow } from "../../../styles/grid";
-import { StyledHeader } from "./../styles";
+import { StyledHeader } from "./styles";
 
 const DesktopHeader: React.FC = () => {
   return (
@@ -31,7 +31,7 @@ const DesktopHeader: React.FC = () => {
                   buttonStyle="solid1"
                   onClick={() => alert("Oi")}
                 >
-                  Teste
+                  QUERO CONTRATAR
                 </ThemeButton>
               </nav>
             </FlexRow>

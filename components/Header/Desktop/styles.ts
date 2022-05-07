@@ -4,6 +4,7 @@ export const StyledHeader = styled.header`
     padding: .6rem 0;
     h1{
         font-family: 'Roboto Monospace', monospace;
+        font-weight: 400;
         font-size: 1.6rem;
         color: var(--colorWhite);
         b{
