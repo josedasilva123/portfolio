@@ -1,17 +1,17 @@
-import {useState, useEffect, createContext} from 'React';
+import {useState, useEffect, createContext} from 'react';
 
 //Interfaces
 interface iGlobalContext{
-    darkMode: boolean,
-    toggleDarkMode: () => void;
-    mobile: boolean,
+    darkMode?: boolean,
+    toggleDarkMode?: () => void;
+    mobile?: boolean,
 }
 
 interface iGlobalStorage{
     children: React.ReactNode;
 }
 
-export const GlobalContext = createContext<iGlobalContext | null>(null);
+export const GlobalContext = createContext<iGlobalContext>({});
 
 export const GlobalStorage: React.FC<iGlobalStorage> = ({ children }) => {
     //Mobile 
