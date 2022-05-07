@@ -38,7 +38,7 @@ export const ThemeButton = styled(BaseButton)`
           padding: 0 1.5rem;
           height: 46px;
         `;
-      case "xl":
+      case "xs":
         return css`
           padding: 0 1.2rem;
           height: 40px;
