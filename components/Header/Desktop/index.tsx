@@ -24,8 +24,7 @@ const DesktopHeader: React.FC = () => {
               justifyContent={{ default: "flex-end" }}
             >
               <nav className="menu">
-                <NavMenu />
-         
+                <NavMenu />         
               </nav>
             </FlexRow>
           </Col>

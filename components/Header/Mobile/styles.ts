@@ -5,13 +5,9 @@ export const StyledMobileHeader = styled.header`
   position: relative;
 
   h1 {
-    font-family: "Roboto Mono", monospace;
     font-weight: 300;
     font-size: 1.4rem;
     color: var(--colorWhite);
-    b {
-      font-family: "Roboto Mono", monospace;
-    }
   }
 
   div{
@@ -25,7 +21,7 @@ export const StyledMobileHeader = styled.header`
     color: var(--colorWhite);
     transition: .3s;
     &:hover{
-        color: var(--colorGreen);
+        color: var(--colorSecondary);
     }
   }
 `;
@@ -63,7 +59,7 @@ export const MobileMenu = styled.nav`
 
       transition: 0.3s;
       &:hover {
-        color: var(--colorGreen);
+        color: var(--colorSecondary);
       }
     }
   }

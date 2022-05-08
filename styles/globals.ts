@@ -1,15 +1,32 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
-  :root{
+//Paleta de cores padrão
+export const DefaultColors = createGlobalStyle`
+    :root{
     --colorBlack: #090909;
-    --colorDarkGreen: #203130;
-    --colorWhite: #FFF;
-    --colorRed: #E6BDBD;  
-    --colorGreen: #9DCCC5;  
+    --colorWhite: #FFF;       
+    --colorPrimary: #E6BDBD;  
+    --colorSecondary: #9DCCC5;  
+    --colorDarkPrimary: #203130; 
   }  
+`;
+
+//Configuração de fontes globais
+export const DefaultFonts = createGlobalStyle`
+  :root{
+    --PrimaryFont: 'Roboto Mono', sans-serif;
+    --SecondaryFont: 'Roboto', sans-serif;
+  } 
+  h1, h2, h3, h4, h5, h6{
+    font-family: var(--PrimaryFont);
+  }
   *{
-      font-family: Roboto, sans-serif;
+    font-family: var(--SecondaryFont);
+  }
+`;
+
+export const GlobalStyle = createGlobalStyle`
+  *{
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -29,5 +46,3 @@ export const GlobalStyle = createGlobalStyle`
     border: none;    
   }
 `;
-
-

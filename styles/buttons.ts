@@ -4,9 +4,10 @@ import { BaseButton } from "./components/buttons";
 export const ThemeButton = styled(BaseButton)`
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-weight: 700;
+  justify-content: center; 
   gap: 0.6rem;
+
+  font-weight: 700;
 
   border-radius: 255px;
   
@@ -52,17 +53,17 @@ export const ThemeButton = styled(BaseButton)`
       //Solids
       case "solid1":
         return css`
-          background: var(--colorRed);
+          background: var(--colorPrimary);
           color: var(--colorWhite);
         `;
       case "solid2":
         return css`
-          background: var(--colorGreen);
+          background: var(--colorSecondary);
           color: var(--colorWhite);
         `;
       case "solid3":
         return css`
-          background: var(--colorDarkGreen);
+          background: var(--colorDarkPrimary);
           color: var(--colorWhite);
         `;
       //Outlines
@@ -73,29 +74,29 @@ export const ThemeButton = styled(BaseButton)`
             border: 2px solid var(--colorWhite);            
             &:hover{
                 background: var(--colorWhite);
-                color: var(--colorDarkGreen);
+                color: var(--colorDarkPrimary);
             }
         `;
       case "outline2":
         return css`
           background: transparent;
-          color: var(--colorRed);
-          border: 2px solid var(--colorGreen);
+          color: var(--colorPrimary);
+          border: 2px solid var(--colorPrimary);
 
           &:hover {
-              background: var(--colorRed);
-              color: var(--colorDarkGreen);
+              background: var(--colorPrimary);
+              color: var(--colorDarkPrimary);
             }
         `;
       case "outline3":
         return css`
           background: transparent;
-          color: var(--colorGreen);
+          color: var(--colorSecondary);
           border: 2px solid var(--colorRed);
 
           &:hover {
-              background: var(--colorGreen);
-              color: var(--colorDarkGreen);
+              background: var(--colorSecondary);
+              color: var(--colorDarkPrimary);
             }
         `;
     }

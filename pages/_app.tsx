@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import Header from "../components/Header";
 import { GlobalStorage } from "../contexts/GlobalContext";
-import { GlobalStyle } from "../styles/globals";
+import { DefaultColors, DefaultFonts, GlobalStyle } from "../styles/globals";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -15,6 +15,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <GlobalStorage>
+        <DefaultFonts />
+        <DefaultColors />
         <GlobalStyle />
         <Header />
         <Component {...pageProps} />        
