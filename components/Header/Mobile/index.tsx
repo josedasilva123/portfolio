@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { MdMenu, MdClose, MdPhone } from "react-icons/md";
 
 import { Container, FlexRow } from "../../../styles/grid";
@@ -7,9 +7,12 @@ import { ThemeButton } from "../../../styles/buttons";
 
 import Logo from "../Logo";
 import NavMenu from "../NavMenu";
+import { useClickOutisde } from "../../../hooks/useOutsideClick";
 
 const MobileHeader: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const mobileMenuRef = useClickOutisde(() => setOpen(false));
+
   return (
     <StyledMobileHeader>
       <Container containerPadding="sm">
@@ -33,7 +36,7 @@ const MobileHeader: React.FC = () => {
         </FlexRow>
       </Container>
       {open && (
-        <MobileMenu className="menu">
+        <MobileMenu className="menu" ref={mobileMenuRef}>
           <NavMenu />          
         </MobileMenu>
       )}
