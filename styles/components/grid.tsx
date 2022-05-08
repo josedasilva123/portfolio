@@ -1,10 +1,13 @@
 import React from 'react'
-import {tSizeList} from '../functions/sizes'
+import { tSizeList } from '../functions/sizes'
+import { iMargin } from './general';
 
 interface iContainer{
   className?: string;
   children: React.ReactNode;
   containerPadding?: "sm" | "md" | "lg";
+  paddingTop?: string;
+  paddingBottom?: string;
   containerSize?: "sm" | "md" | "lg";
 }
 
@@ -13,6 +16,7 @@ interface iFlexRow{
   children: React.ReactNode;
   gap?: string;
   alignItems?: tSizeList;
+  rowMargin?: iMargin;
   justifyContent?: tSizeList;
   flexDirection?: tSizeList;
   flexWrap?: tSizeList;

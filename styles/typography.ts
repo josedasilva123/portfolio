@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components";
-import { BaseTitle, BaseLabel, BaseParagraph } from "./components/typography";
+import { BaseTitle, BaseLabel, BaseParagraph, BaseTextBox } from "./components/typography";
 import { fontColor } from "./functions/typography";
 
 export const ThemeTitle = styled(BaseTitle)`
@@ -54,7 +54,18 @@ export const ThemeTitle = styled(BaseTitle)`
                     @media (max-width: 768px){
                         font-size: 18px;
                     }
-                `               
+                `   
+            case 'subtitle':
+                return css`
+                    font-size: 20px;
+                    font-weight: 600;
+                    @media (max-width: 1368px){
+                        font-size: 18px;
+                    }
+                    @media (max-width: 768px){
+                        font-size: 17px;
+                    }
+                `                    
         }
     }}
     //Cores de título
@@ -77,8 +88,19 @@ export const ThemeLabel = styled(BaseLabel)`
 export const ThemeParagraph = styled(BaseParagraph)`
     font-size: 16px;
 
+    line-height: 1.7;
+
     margin-top: ${(props) => props.paragraphMargin?.top};
     margin-bottom: ${(props) => props.paragraphMargin?.bottom};
     //Cores do parágrafo
     ${(props) => fontColor(props.paragraphColor)}   
+`
+
+export const ThemeTextBox = styled(BaseTextBox)`
+    display: flex;
+    flex-direction: column;
+    gap: ${(props) => props.gap};
+
+    margin-top: ${(props) => props.textBoxMargin?.top};
+    margin-bottom: ${(props) => props.textBoxMargin?.bottom};
 `

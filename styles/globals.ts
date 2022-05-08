@@ -5,7 +5,7 @@ export const DefaultColors = createGlobalStyle`
     :root{
     --colorBlack: #090909;
     --colorWhite: #FFF;       
-    --colorPrimary: #E6BDBD;  
+    --colorPrimary: #A5CDE6;  
     --colorSecondary: #9DCCC5;  
     --colorDarkPrimary: #203130; 
   }  
@@ -14,7 +14,7 @@ export const DefaultColors = createGlobalStyle`
 //Configuração de fontes globais
 export const DefaultFonts = createGlobalStyle`
   :root{
-    --PrimaryFont: 'Roboto Mono', sans-serif;
+    --PrimaryFont: 'Roboto Mono', monospace;
     --SecondaryFont: 'Roboto', sans-serif;
   } 
   h1, h2, h3, h4, h5, h6{

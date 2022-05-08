@@ -36,6 +36,9 @@ export const Container = styled(BaseContainer)`
     }
   }}
 
+  padding-top: ${props => props.paddingTop};
+  padding-bottom: ${props => props.paddingBottom};
+
   //Tamanho do Container
   ${(props) => {
     switch (props.containerSize) {
@@ -60,6 +63,8 @@ export const FlexRow = styled(BaseFlexRow)`
   width: 100%;
   display: flex;
   gap: ${(props) => props.gap};
+
+
   align-items: ${(props) =>
     getSizeValue(props.alignItems, props.alignItems?.xl, XLDefault)};
   justify-content: ${(props) =>
@@ -112,6 +117,9 @@ export const FlexRow = styled(BaseFlexRow)`
     flex-wrap: ${(props) =>
       getSizeValue(props.flexWrap, props.flexWrap?.xs, XSDefault)};
   }
+  
+  margin-top: ${(props) => props.rowMargin?.top};
+  margin-bottom: ${(props) => props.rowMargin?.bottom};
 `;
 
 //Col com largura orientada em %

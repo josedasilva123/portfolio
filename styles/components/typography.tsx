@@ -1,16 +1,12 @@
 import React from 'react'
-
-interface iMargin{
-    top?: string;
-    bottom?: string;
-}
+import { iMargin } from './general';
 
 interface iTitle{
     className?: string;
     children: React.ReactNode; 
     titleMargin?: iMargin;
     titleTag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-    titleSize: 'headline' | 'title1' | 'title2' | 'title3';
+    titleSize: 'headline' | 'title1' | 'title2' | 'title3' | 'subtitle';
     titleColor?: 'white' | 'primary' | 'secondary'; 
 }
 
@@ -26,6 +22,13 @@ interface iParagraph{
     children: React.ReactNode;
     paragraphMargin?: iMargin;
     paragraphColor?: 'white' | 'primary' | 'secondary'; 
+}
+
+interface iTextBox{
+    className?: string;
+    children: React.ReactNode;
+    gap?: string;
+    textBoxMargin?: iMargin;
 }
 
 //Componente base de título com variação de tag via props
@@ -53,6 +56,15 @@ export const BaseLabel: React.FC<iLabel> = ({ children, className }) => {
 
 //Componente base de parágrafo
 export const BaseParagraph: React.FC<iParagraph> = ({ children, className }) => {
+    return(
+        <p className={className}>
+            {children}
+        </p>
+    )
+}
+
+//Componente caixa de texto
+export const BaseTextBox: React.FC<iTextBox> = ({ children, className }) => {
     return(
         <p className={className}>
             {children}
