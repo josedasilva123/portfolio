@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 
 export const useClickOutisde = (callbackFunction: () => void) => {
-  const ref = useRef<HTMLElement>();
+  const ref = useRef<HTMLElement>(null);
 
   //Efeito de outsideClick
   useEffect(() => {

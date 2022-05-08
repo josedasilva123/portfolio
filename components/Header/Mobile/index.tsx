@@ -7,6 +7,7 @@ import { ThemeButton } from "../../../styles/buttons";
 
 import Logo from "../Logo";
 import NavMenu from "../NavMenu";
+
 import { useClickOutisde } from "../../../hooks/useOutsideClick";
 
 const MobileHeader: React.FC = () => {
