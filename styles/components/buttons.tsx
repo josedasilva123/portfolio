@@ -4,6 +4,7 @@ interface iButton{
     className?: string;
     disabled?: boolean
     children: React.ReactNode;
+    buttonActive?: boolean;
     buttonSize: "xs" | "sm" | "md" | "lg" | "xl";
     buttonStyle: "solid1" | "solid2" | "solid3" | "outline1" | "outline2" | "outline3";
     type?: "submit";

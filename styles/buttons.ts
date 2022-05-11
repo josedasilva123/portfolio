@@ -4,13 +4,13 @@ import { BaseButton } from "./components/buttons";
 export const ThemeButton = styled(BaseButton)`
   display: inline-flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   gap: 0.6rem;
 
   font-weight: 700;
 
   border-radius: 255px;
-  
+
   transition: 0.3s;
 
   //Button sizes
@@ -69,13 +69,13 @@ export const ThemeButton = styled(BaseButton)`
       //Outlines
       case "outline1":
         return css`
-            background: transparent;
-            color: var(--colorWhite);
-            border: 2px solid var(--colorWhite);            
-            &:hover{
-                background: var(--colorWhite);
-                color: var(--colorDarkPrimary);
-            }
+          background: transparent;
+          color: var(--colorWhite);
+          border: 2px solid var(--colorWhite);
+          &:hover {
+            background: var(--colorWhite);
+            color: var(--colorDarkPrimary);
+          }
         `;
       case "outline2":
         return css`
@@ -84,9 +84,9 @@ export const ThemeButton = styled(BaseButton)`
           border: 2px solid var(--colorPrimary);
 
           &:hover {
-              background: var(--colorPrimary);
-              color: var(--colorDarkPrimary);
-            }
+            background: var(--colorPrimary);
+            color: var(--colorDarkPrimary);
+          }
         `;
       case "outline3":
         return css`
@@ -95,9 +95,9 @@ export const ThemeButton = styled(BaseButton)`
           border: 2px solid var(--colorRed);
 
           &:hover {
-              background: var(--colorSecondary);
-              color: var(--colorDarkPrimary);
-            }
+            background: var(--colorSecondary);
+            color: var(--colorDarkPrimary);
+          }
         `;
     }
   }}
@@ -109,5 +109,38 @@ export const ThemeButton = styled(BaseButton)`
           filter: brightness(1.05);
         }
       `;
-    }}}
+    }
+  }}
+   //Active (Solid)
+   ${(props) => {
+    if (props.buttonActive) {
+      return css`
+        &:hover {
+          filter: brightness(1.05);
+        }
+      `;
+    }
+  }}
+  //Active (Outline)
+  ${(props) => {
+    if (props.buttonActive) {
+      switch (props.buttonStyle) {
+        case "outline1":
+          return css`
+            background: var(--colorWhite);
+            color: var(--colorDarkPrimary);
+          `;
+        case "outline2":
+          return css`
+            background: var(--colorPrimary);
+            color: var(--colorDarkPrimary);
+          `;
+        case "outline3":
+          return css`
+            background: var(--colorSecondary);
+            color: var(--colorDarkPrimary);
+          `;
+      }
+    }
+  }}
 `;
