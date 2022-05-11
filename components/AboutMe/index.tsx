@@ -37,16 +37,16 @@ const AboutMe: React.FC = () => {
             </ThemeTitle>
             <ThemeTextBox gap="1rem" textBoxMargin={{ top: "1rem" }}>
               <ThemeParagraph paragraphColor="white">
-                Olá, sou Alex Conder, muito prazer! Sou UI Designer a 6 anos,
+                Olá, sou Alex Conder (ele/dele), muito prazer! Sou UI Designer a 6 anos,
                 desenvedor a 4 anos. Hoje trabalho como facilitador de ensino da
                 Kenzie Academy e prestos serviços a Nerdweb como UI/UX e
                 Fullstack.
               </ThemeParagraph>
               <ThemeParagraph paragraphColor="white">
                 Técnico de Administração, graduado em Marketing e pós-graduando
-                em Projetos de Sistemas da Informação,{" "}
+                em Projetos de Sistemas da Informação.
                 <b>
-                  encontrei minha paixão profissional em UI, programação e
+                  Encontrei minha paixão profissional em UI, programação e
                   ensino!
                 </b>
               </ThemeParagraph>
@@ -59,7 +59,7 @@ const AboutMe: React.FC = () => {
                 <b>
                   Embora uma diversão, o jogo e o contato com a comunidade me
                   ensinou muito sobre lógica de programação e trabalho em
-                  equipe.{" "}
+                  equipe.
                 </b>
               </ThemeParagraph>
             </ThemeTextBox>
