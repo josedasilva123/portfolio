@@ -6,6 +6,7 @@ export const DefaultColors = createGlobalStyle`
     --colorBlack: #090909;
     --colorWhite: #FFF;       
     --colorPrimary: #A5CDE6;  
+    --colorPrimaryOpacity20: #A5CDE63F;  
     --colorSecondary: #9DCCC5;  
     --colorDarkPrimary: #203130; 
   }  
@@ -34,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
   a{
     text-decoration: none;
   }
-  ul, ol{
+  ul, ol, li{
     list-style: none;
   }
   body {
