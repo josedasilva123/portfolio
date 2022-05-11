@@ -66,8 +66,8 @@ export const BaseParagraph: React.FC<iParagraph> = ({ children, className }) => 
 //Componente caixa de texto
 export const BaseTextBox: React.FC<iTextBox> = ({ children, className }) => {
     return(
-        <p className={className}>
+        <div className={className}>
             {children}
-        </p>
+        </div>
     )
 }
