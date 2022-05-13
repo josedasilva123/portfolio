@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components";
-import { BaseTitle, BaseLabel, BaseParagraph, BaseTextBox } from "./components/typography";
+import { BaseTitle, BaseLabel, BaseParagraph, BaseTextBox, BaseList } from "./components/typography";
 import { fontColor } from "./functions/typography";
 
 export const ThemeTitle = styled(BaseTitle)`
@@ -103,4 +103,32 @@ export const ThemeTextBox = styled(BaseTextBox)`
 
     margin-top: ${(props) => props.textBoxMargin?.top};
     margin-bottom: ${(props) => props.textBoxMargin?.bottom};
+
+    
+`
+
+export const ThemeList = styled(BaseList)`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: ${(props) => props.gap};
+
+    line-height: 1.4;
+
+    font-weight: 500;
+
+    padding-left: ${(props) => props.paddingLeft};    
+
+    margin-top: ${(props) => props.listMargin?.top};
+    margin-bottom: ${(props) => props.listMargin?.bottom};
+
+    //Cores do item na lista
+    ${(props) => fontColor(props.listItemColor)}   
+
+    li{
+        list-style: ${(props) => props.listStyle};
+    }
+    
+    
 `
