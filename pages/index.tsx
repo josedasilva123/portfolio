@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import AboutMe from '../components/AboutMe';
 import MainBanner from '../components/MainBanner';
+import SoftSkills from '../components/SoftSkills';
 import Techs from '../components/Techs';
 
 const Home: NextPage = () => {
@@ -9,6 +10,7 @@ const Home: NextPage = () => {
       <MainBanner />
       <AboutMe />
       <Techs />
+      <SoftSkills />
     </>
   )
 }
