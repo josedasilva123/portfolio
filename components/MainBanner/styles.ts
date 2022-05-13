@@ -5,7 +5,7 @@ export const MainBannerGrid = styled.section`
         background: url('/Code.jpg');
         background-clip: text;
         -webkit-background-clip: text;
-        -webkit-text-fill-color: rgba(255,255,255, .6);
+        -webkit-text-fill-color: var(--colorWhiteOpacity60);
         background-size: cover;
     }
     img{

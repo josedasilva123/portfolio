@@ -7,4 +7,8 @@ export const StyledLogo = styled.h1`
     b {
       font-family: "Roboto Mono", monospace;
     }
+
+    @media (max-width: 420px){
+      font-size: 1.1rem!important;
+    }
 `
