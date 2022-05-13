@@ -44,11 +44,8 @@ const AboutMe: React.FC = () => {
               </ThemeParagraph>
               <ThemeParagraph paragraphColor="white">
                 Técnico de Administração, graduado em Marketing e pós-graduando
-                em Projetos de Sistemas da Informação.
-                <b>
-                  Encontrei minha paixão profissional em UI, programação e
-                  ensino!
-                </b>
+                em Projetos de Sistemas da Informação. <b> Encontrei minha paixão 
+                profissional em UI, programação e ensino!</b>                
               </ThemeParagraph>
               <ThemeParagraph paragraphColor="white">
                 Minha história como programador começou muito cedo, me primeiro
