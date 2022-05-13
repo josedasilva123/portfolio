@@ -2,15 +2,46 @@ import { createGlobalStyle } from "styled-components";
 
 //Paleta de cores padrão
 export const DefaultColors = createGlobalStyle`
-    :root{
+  :root{
+    //Main
     --colorBlack: #090909;
-    --colorWhite: #FFF;       
-    --colorPrimary: #A5CDE6;  
-    --colorPrimaryOpacity20: #A5CDE63F;  
-    --colorSecondary: #9DCCC5;  
-    --colorDarkPrimary: #203130; 
+    --colorWhite: #FFF; 
+    --colorPrimary: #8FC9ED;
+    --colorSecondary: #9DCCC5;
+
+    //Button
+    --colorBlackButton: #090909;
+    --colorWhiteButton: #FFF; 
+    --colorSecondaryButton: #9DCCC5;
+    --colorPrimaryButton: #8FC9ED;  
+
+    //Custom
+    --colorWhiteOpacity60: rgba(255,255,255, .6);
+    --colorPrimaryOpacity20: #8FC9ED3F;  
+    --colorDarkPrimary: #131E1D; 
   }  
 `;
+
+export const LightThemeColors = createGlobalStyle`
+  :root{
+    //Main
+    --colorBlack: #FFF;
+    --colorWhite: #090909;    
+    --colorPrimary: #559DCA;
+    --colorSecondary: #3B4D4A;
+
+    //Button
+    --colorBlackButton: #090909;
+    --colorWhiteButton: #FFF;
+    --colorPrimaryButton: #559DCA;
+    --colorSecondaryButton: #3B4D4A;  
+
+    //Custom
+    --colorWhiteOpacity60: rgba(9,9,9, .6);
+    --colorPrimaryOpacity20: #559DCA3F; 
+    --colorDarkPrimary: #E8FBFA;
+  }  
+`
 
 //Configuração de fontes globais
 export const DefaultFonts = createGlobalStyle`
@@ -39,11 +70,14 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
   body {
-    background: linear-gradient(#090909, #202130) no-repeat;
+    background: linear-gradient(var(--colorBlack), var(--colorDarkPrimary)) no-repeat;
     background-size: cover;
   }
   button {
     cursor: pointer;
-    border: none;    
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;  
   }
 `;

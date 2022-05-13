@@ -31,6 +31,17 @@ interface iTextBox{
     textBoxMargin?: iMargin;
 }
 
+interface iList{
+    className?: string;
+    children: React.ReactNode;
+    gap?: string;   
+    listTag: 'ul' | 'ol';   
+    paddingLeft?: string; 
+    listStyle?: string;
+    listMargin?: iMargin;
+    listItemColor?: 'white' | 'primary' | 'secondary';
+}
+
 //Componente base de título com variação de tag via props
 export const BaseTitle: React.FC<iTitle> = ({ children, className, titleTag }) => {
   return (
@@ -69,5 +80,15 @@ export const BaseTextBox: React.FC<iTextBox> = ({ children, className }) => {
         <div className={className}>
             {children}
         </div>
+    )
+}
+
+//Componente de lista
+export const BaseList: React.FC<iList> = ({ children, className, listTag }) => {
+    return(
+        <>
+            {listTag === "ul" && <ul className={className}>{children}</ul>}
+            {listTag === "ol" && <ol className={className}>{children}</ol>}
+        </>
     )
 }

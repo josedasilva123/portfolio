@@ -36,11 +36,13 @@ export const ThemeButton = styled(BaseButton)`
         `;
       case "sm":
         return css`
+        font-size: 0.875rem;
           padding: 0 1.5rem;
           height: 46px;
         `;
       case "xs":
         return css`
+          font-size: 0.825rem;
           padding: 0 1.2rem;
           height: 40px;
         `;
@@ -53,18 +55,18 @@ export const ThemeButton = styled(BaseButton)`
       //Solids
       case "solid1":
         return css`
-          background: var(--colorPrimary);
-          color: var(--colorWhite);
+          background: var(--colorPrimaryButton);
+          color: var(--colorWhiteButton);
         `;
       case "solid2":
         return css`
-          background: var(--colorSecondary);
-          color: var(--colorWhite);
+          background: var(--colorSecondaryButton);
+          color: var(--colorWhiteButton);
         `;
       case "solid3":
         return css`
-          background: var(--colorDarkPrimary);
-          color: var(--colorWhite);
+          background: var(--colorDarkPrimaryButton);
+          color: var(--colorWhiteButton);
         `;
       //Outlines
       case "outline1":
@@ -74,29 +76,29 @@ export const ThemeButton = styled(BaseButton)`
           border: 2px solid var(--colorWhite);
           &:hover {
             background: var(--colorWhite);
-            color: var(--colorDarkPrimary);
+            color: var(--colorBlack);
           }
         `;
       case "outline2":
         return css`
           background: transparent;
-          color: var(--colorPrimary);
-          border: 2px solid var(--colorPrimary);
+          color: var(--colorPrimaryButton);
+          border: 2px solid var(--colorPrimaryButton);
 
           &:hover {
-            background: var(--colorPrimary);
-            color: var(--colorDarkPrimary);
+            background: var(--colorPrimaryButton);
+            color: var(--colorBlack);
           }
         `;
       case "outline3":
         return css`
           background: transparent;
-          color: var(--colorSecondary);
-          border: 2px solid var(--colorRed);
+          color: var(--colorSecondaryButton);
+          border: 2px solid var(--colorSecondaryButton);
 
           &:hover {
-            background: var(--colorSecondary);
-            color: var(--colorDarkPrimary);
+            background: var(--colorSecondaryButton);
+            color: var(--colorBlack);
           }
         `;
     }
@@ -128,17 +130,17 @@ export const ThemeButton = styled(BaseButton)`
         case "outline1":
           return css`
             background: var(--colorWhite);
-            color: var(--colorDarkPrimary);
+            color: var(--colorBlack);
           `;
         case "outline2":
           return css`
-            background: var(--colorPrimary);
-            color: var(--colorDarkPrimary);
+            background: var(--colorPrimaryButton);
+            color: var(--colorBlack);
           `;
         case "outline3":
           return css`
-            background: var(--colorSecondary);
-            color: var(--colorDarkPrimary);
+            background: var(--colorSecondaryButton);
+            color: var(--colorBlack);
           `;
       }
     }

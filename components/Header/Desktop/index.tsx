@@ -1,10 +1,11 @@
 import React from "react";
-import { ThemeButton } from "../../../styles/buttons";
+
 import { Col, Container, FlexRow } from "../../../styles/grid";
 import { StyledHeader } from "./styles";
 
 import Logo from "../Logo";
 import NavMenu from "../NavMenu";
+import DarkModeButton from "../DarkModeButton";
 
 
 const DesktopHeader: React.FC = () => {
@@ -20,12 +21,14 @@ const DesktopHeader: React.FC = () => {
           </Col>
           <Col size={{ default: "100%" }}>
             <FlexRow
+              gap="1rem"
               alignItems={{ default: "center" }}
               justifyContent={{ default: "flex-end" }}
             >
               <nav className="menu">
                 <NavMenu />         
-              </nav>
+              </nav>  
+              <DarkModeButton />
             </FlexRow>
           </Col>
         </FlexRow>
