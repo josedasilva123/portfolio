@@ -5,6 +5,8 @@ import { fontColor } from "./functions/typography";
 export const ThemeTitle = styled(BaseTitle)`
     line-height: 1.3;
 
+    text-align: ${(props) => props.titleAlign};
+
     margin-top: ${(props) => props.titleMargin?.top};
     margin-bottom: ${(props) => props.titleMargin?.bottom};
 
@@ -79,6 +81,8 @@ export const ThemeLabel = styled(BaseLabel)`
     font-weight: 600; 
     letter-spacing: .2em;
 
+    text-align: ${(props) => props.labelAlign};
+
     margin-top: ${(props) => props.labelMargin?.top};
     margin-bottom: ${(props) => props.labelMargin?.bottom};
     //Cores do rótulo
@@ -89,6 +93,8 @@ export const ThemeParagraph = styled(BaseParagraph)`
     font-size: 16px;
 
     line-height: 1.7;
+
+    text-align: ${(props) => props.paragraphAlign};
 
     margin-top: ${(props) => props.paragraphMargin?.top};
     margin-bottom: ${(props) => props.paragraphMargin?.bottom};

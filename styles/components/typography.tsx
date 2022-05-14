@@ -3,7 +3,8 @@ import { iMargin } from './general';
 
 interface iTitle{
     className?: string;
-    children: React.ReactNode; 
+    children: React.ReactNode;
+    titleAlign?: 'left' | 'center' | 'right'; 
     titleMargin?: iMargin;
     titleTag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     titleSize: 'headline' | 'title1' | 'title2' | 'title3' | 'subtitle';
@@ -13,6 +14,7 @@ interface iTitle{
 interface iLabel{
     className?: string;
     children: React.ReactNode; 
+    labelAlign?: 'left' | 'center' | 'right'; 
     labelMargin?: iMargin;
     labelColor?: 'white' | 'primary' | 'secondary'; 
 }
@@ -20,6 +22,7 @@ interface iLabel{
 interface iParagraph{
     className?: string;
     children: React.ReactNode;
+    paragraphAlign?: 'left' | 'center' | 'right'; 
     paragraphMargin?: iMargin;
     paragraphColor?: 'white' | 'primary' | 'secondary'; 
 }
