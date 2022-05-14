@@ -1,6 +1,8 @@
+import { iTech } from "../interfaces/global"
+
 export const techCategories = ['Front-end', 'Back-end', 'UX/UI']
 
-export const techList = [
+export const techList: iTech[] = [
     {
         name: 'HTML5',
         proficiency: 100,

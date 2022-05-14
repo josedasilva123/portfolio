@@ -77,7 +77,7 @@ const Techs: React.FC = () => {
           flexWrap={{ default: "wrap" }}
           rowMargin={{ top: "2rem" }}
         >
-          {(filterList ? filterList : techList).map((tech: any) => (
+          {(filterList ? filterList : techList).map((tech) => (
             <Col
               key={tech.name}
               size={{
