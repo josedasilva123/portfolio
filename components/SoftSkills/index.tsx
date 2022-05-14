@@ -22,7 +22,7 @@ const SoftSkills: React.FC = () => {
       >
         <Col size={{ default: "100%" }}>
           <ThemeTitle titleTag="h2" titleSize="title1" titleColor="white">
-            Minha Softskills
+            Minhas Softskills
           </ThemeTitle>
           <ThemeTitle titleTag="h3" titleSize="subtitle" titleColor="primary">
             Criatividade, dedicação e iniciativa
