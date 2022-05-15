@@ -13,9 +13,13 @@ import {
 
 const SoftSkills: React.FC = () => {
   return (
-    <Container containerPadding="sm" paddingTop="4rem" paddingBottom="5rem">
+    <Container
+      containerPadding="sm"
+      paddingTop={{ xl: "4rem", lg: "3rem", md: "2rem" }}
+      paddingBottom={{ xl: "5rem", lg: "4rem", md: "2rem" }}
+    >
       <FlexRow
-        gap="2rem"
+        gap={{ default: '2rem'}}
         alignItems={{ default: "center" }}
         justifyContent={{ default: "space-between" }}
         flexDirection={{ sm: "column", md: "row" }}
@@ -29,12 +33,29 @@ const SoftSkills: React.FC = () => {
           </ThemeTitle>
           <ThemeTextBox gap="1rem" textBoxMargin={{ top: "1rem" }}>
             <ThemeParagraph paragraphColor="white">
-              Sou um profissional com bastante criatividade e iniciativa, vejo um problema e busco uma solução, vejo uma oportunidade e aproveito da melhor forma.
+              Sou um profissional com bastante criatividade e iniciativa, vejo
+              um problema e busco uma solução, vejo uma oportunidade e aproveito
+              da melhor forma.
             </ThemeParagraph>
-            <ThemeList gap="1rem" listTag="ul" listItemColor="secondary" listStyle="circle" paddingLeft="1rem">
-                <li>É bem fácil se comunicar comigo, já trabalhei liderando equipes, treinando time e ensinando.</li>
-                <li>Sou versátil, estou em constante aprendizado e me coloco sempre fléxivel a mudança</li>
-                <li>Sou criativo e proativo, gosto de resolver problemas, propor ideias e ousar, ir além do requisito e entregar excelência.</li>
+            <ThemeList
+              gap="1rem"
+              listTag="ul"
+              listItemColor="secondary"
+              listStyle="circle"
+              paddingLeft="1rem"
+            >
+              <li>
+                É bem fácil se comunicar comigo, já trabalhei liderando equipes,
+                treinando time e ensinando.
+              </li>
+              <li>
+                Sou versátil, estou em constante aprendizado e me coloco sempre
+                fléxivel a mudança
+              </li>
+              <li>
+                Sou criativo e proativo, gosto de resolver problemas, propor
+                ideias e ousar, ir além do requisito e entregar excelência.
+              </li>
             </ThemeList>
           </ThemeTextBox>
         </Col>

@@ -21,7 +21,7 @@ const DesktopHeader: React.FC = () => {
           </Col>
           <Col size={{ default: "100%" }}>
             <FlexRow
-              gap="1rem"
+              gap={{ default: '1rem'}}
               alignItems={{ default: "center" }}
               justifyContent={{ default: "flex-end" }}
             >

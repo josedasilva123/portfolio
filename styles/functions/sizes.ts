@@ -11,39 +11,13 @@ type tSizeFunction = (
    prop: tSizeList | undefined,
 ) => string | number | undefined;
 
-export const XLDefault: tSizeFunction = (prop) => {
-    if(prop?.lg){
-        return prop.lg;
-    } else if(prop?.md) {
-        return prop.md;
-    } else if (prop?.sm) {
-        return prop.sm;
-    } else if (prop?.xs) {
-        return prop.xs
-    } else if (prop?.default) {
-        return prop.default;
-    }
-}
-
-export const LGDefault: tSizeFunction = (prop) => {
-    if(prop?.lg){
-        return prop.lg;
-    } else if(prop?.md) {
-        return prop.md;
-    } else if (prop?.sm) {
-        return prop.sm;
-    } else if (prop?.xs) {
-        return prop.xs
-    } else if (prop?.default){
-        return prop.default;
-    }
-}
-
-export const MDDefault: tSizeFunction = (prop) => {
+export const LargerDefault: tSizeFunction = (prop) => {
     if(prop?.xl){
         return prop.xl;
-    } else if(prop?.lg) {
+    } else if(prop?.lg){
         return prop.lg;
+    } else if(prop?.md) {
+        return prop.md;
     } else if (prop?.sm) {
         return prop.sm;
     } else if (prop?.xs) {
@@ -53,22 +27,10 @@ export const MDDefault: tSizeFunction = (prop) => {
     }
 }
 
-export const SMDefault: tSizeFunction = (prop) => {
+export const SmallerDefault: tSizeFunction = (prop) => {
     if(prop?.xs){
         return prop.xs;
-    } else if(prop?.md) {
-        return prop.md;
-    } else if (prop?.lg) {
-        return prop.lg;
-    } else if (prop?.xl) {
-        return prop.xl
-    } else if (prop?.default){
-        return prop.default;
-    }
-}
-
-export const XSDefault: tSizeFunction = (prop) => {
-    if(prop?.sm){
+    } else if(prop?.sm){
         return prop.sm;
     } else if(prop?.md) {
         return prop?.md;

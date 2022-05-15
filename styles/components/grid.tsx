@@ -6,15 +6,15 @@ interface iContainer{
   className?: string;
   children: React.ReactNode;
   containerPadding?: "sm" | "md" | "lg";
-  paddingTop?: string;
-  paddingBottom?: string;
+  paddingTop?: tSizeList;
+  paddingBottom?: tSizeList;
   containerSize?: "sm" | "md" | "lg";
 }
 
 interface iFlexRow{
   className?: string;
   children: React.ReactNode;
-  gap?: string;
+  gap?: tSizeList;
   alignItems?: tSizeList;
   rowMargin?: iMargin;
   justifyContent?: tSizeList;

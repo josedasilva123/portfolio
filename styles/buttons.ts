@@ -56,27 +56,27 @@ export const ThemeButton = styled(BaseButton)`
       case "solid1":
         return css`
           background: var(--colorPrimaryButton);
-          color: var(--colorWhiteButton);
+          color: var(--colorWhiteSolidButton);
         `;
       case "solid2":
         return css`
           background: var(--colorSecondaryButton);
-          color: var(--colorWhiteButton);
+          color: var(--colorWhiteSolidButton);
         `;
       case "solid3":
         return css`
           background: var(--colorDarkPrimaryButton);
-          color: var(--colorWhiteButton);
+          color: var(--colorWhiteSolidButton);
         `;
       //Outlines
       case "outline1":
         return css`
           background: transparent;
-          color: var(--colorWhite);
-          border: 2px solid var(--colorWhite);
+          color: var(--colorWhiteOutlineButton);
+          border: 2px solid var(--colorWhiteOutlineButton);
           &:hover {
-            background: var(--colorWhite);
-            color: var(--colorBlack);
+            background: var(--colorWhiteOutlineButton);
+            color: var(--colorBlackOutlineButton);
           }
         `;
       case "outline2":
@@ -87,7 +87,7 @@ export const ThemeButton = styled(BaseButton)`
 
           &:hover {
             background: var(--colorPrimaryButton);
-            color: var(--colorBlack);
+            color: var(--colorBlackOutlineButton);
           }
         `;
       case "outline3":
@@ -98,7 +98,7 @@ export const ThemeButton = styled(BaseButton)`
 
           &:hover {
             background: var(--colorSecondaryButton);
-            color: var(--colorBlack);
+            color: var(--colorBlackOutlineButton);
           }
         `;
     }
@@ -129,18 +129,18 @@ export const ThemeButton = styled(BaseButton)`
       switch (props.buttonStyle) {
         case "outline1":
           return css`
-            background: var(--colorWhite);
-            color: var(--colorBlack);
+            background: var(--colorWhiteOutlineButton);
+            color: var(--colorBlackOutlineButton);
           `;
         case "outline2":
           return css`
             background: var(--colorPrimaryButton);
-            color: var(--colorBlack);
+            color: var(--colorBlackOutlineButton);
           `;
         case "outline3":
           return css`
             background: var(--colorSecondaryButton);
-            color: var(--colorBlack);
+            color: var(--colorBlackOutlineButton);
           `;
       }
     }

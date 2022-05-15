@@ -5,13 +5,15 @@ export const DefaultColors = createGlobalStyle`
   :root{
     //Main
     --colorBlack: #090909;
-    --colorWhite: #FFF; 
+    --colorWhite: #FFFFFF; 
     --colorPrimary: #8FC9ED;
     --colorSecondary: #9DCCC5;
 
     //Button
-    --colorBlackButton: #090909;
-    --colorWhiteButton: #FFF; 
+    --colorBlackSolidButton: #090909;
+    --colorWhiteSolidButton: #FFFFFF; 
+    --colorBlackOutlineButton: #090909;
+    --colorWhiteOutlineButton: #FFF; 
     --colorSecondaryButton: #9DCCC5;
     --colorPrimaryButton: #8FC9ED;  
 
@@ -25,14 +27,16 @@ export const DefaultColors = createGlobalStyle`
 export const LightThemeColors = createGlobalStyle`
   :root{
     //Main
-    --colorBlack: #FFF;
+    --colorBlack: #FFFFFF;
     --colorWhite: #090909;    
     --colorPrimary: #559DCA;
     --colorSecondary: #3B4D4A;
 
     //Button
-    --colorBlackButton: #090909;
-    --colorWhiteButton: #FFF;
+    --colorBlackSolidButton: #090909;
+    --colorWhiteSolidButton: #FFFFFF; 
+    --colorBlackOutlineButton: #FFFFFF;
+    --colorWhiteOutlineButton: #090909; 
     --colorPrimaryButton: #559DCA;
     --colorSecondaryButton: #3B4D4A;  
 

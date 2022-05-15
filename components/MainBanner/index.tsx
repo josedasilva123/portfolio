@@ -12,9 +12,13 @@ import { MainBannerGrid } from "./styles";
 const MainBanner: React.FC = () => {
   return (
     <MainBannerGrid>
-      <Container containerPadding="sm" paddingTop="4rem" paddingBottom="5rem">
+      <Container
+        containerPadding="sm"
+        paddingTop={{ xl: "4rem", lg: "3rem", md: "2rem" }}
+        paddingBottom={{ xl: "5rem", lg: "4rem", md: "2rem" }}
+      >
         <FlexRow
-          gap="2rem"
+          gap={{ default: '2rem'}}
           alignItems={{ default: "center" }}
           justifyContent={{ default: "space-between" }}
           flexDirection={{ sm: "column", md: "row" }}
@@ -47,10 +51,15 @@ const MainBanner: React.FC = () => {
                 paragraphMargin={{ top: "1rem", bottom: "3rem" }}
               >
                 Meu trabalho é conectar UX/UI Design com desenvolvimento,
-                carregando a preocupação com qualidade de código e experiência do usuário da criação até a entrega final.
+                carregando a preocupação com qualidade de código e experiência
+                do usuário da criação até a entrega final.
               </ThemeParagraph>
-              
-              <FlexRow gap=".6rem" flexDirection={{ sm: 'column', md: 'row'}} alignItems= {{ sm: 'center', md: 'flex-start'}}>
+
+              <FlexRow
+                gap={{ default: '.6rem'}}
+                flexDirection={{ sm: "column", md: "row" }}
+                alignItems={{ sm: "center", md: "flex-start" }}
+              >
                 <ThemeButton buttonStyle="solid1" buttonSize="md">
                   Contratar agora
                 </ThemeButton>

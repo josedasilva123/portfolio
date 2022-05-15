@@ -29,7 +29,11 @@ const Techs: React.FC = () => {
 
   return (
     <section>
-      <Container containerPadding="sm" paddingTop="4rem" paddingBottom="5rem">
+      <Container
+        containerPadding="sm"
+        paddingTop={{ xl: "4rem", lg: "3rem", md: "2rem" }}
+        paddingBottom={{ xl: "5rem", lg: "4rem", md: "2rem" }}
+      >
         <ThemeTitle titleTag="h2" titleSize="title1" titleColor="white">
           Minhas Hardskills
         </ThemeTitle>
@@ -72,7 +76,7 @@ const Techs: React.FC = () => {
           </ThemeButton>
         </TechMenu>
         <FlexRow
-          gap="2rem"
+          gap={{ default: '2rem'}}
           alignItems={{ default: "space-between" }}
           flexWrap={{ default: "wrap" }}
           rowMargin={{ top: "2rem" }}

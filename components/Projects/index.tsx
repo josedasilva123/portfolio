@@ -13,7 +13,11 @@ import Nerdweb from "./Nerdweb";
 const Projects = () => {
   const [currentTab, setCurrentTag] = useState("nerdweb");
   return (
-    <Container containerPadding="sm" paddingTop="4rem" paddingBottom="5rem">
+    <Container
+      containerPadding="sm"
+      paddingTop={{ xl: "4rem", lg: "3rem", md: "2rem" }}
+      paddingBottom={{ xl: "5rem", lg: "4rem", md: "2rem" }}
+    >
       <ThemeLabel labelColor="white" labelAlign="center">
         Um pouco da minha trajetoria
       </ThemeLabel>
@@ -64,9 +68,7 @@ const Projects = () => {
           </ThemeButton>
         </li>
       </TechMenu>
-      {currentTab === "nerdweb" && (
-        <Nerdweb />
-      )}
+      {currentTab === "nerdweb" && <Nerdweb />}
     </Container>
   );
 };
