@@ -1,5 +1,7 @@
 import { iProject } from "../interfaces/global"
 
+export const gitHubProjects = ['basicv2', 'portfolio', 'pokedux'];
+
 export const nerdwebProjects: iProject[] = [
     {
       name: 'Caldo Bom: Notas do Mundo',

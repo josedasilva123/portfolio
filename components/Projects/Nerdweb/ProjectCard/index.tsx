@@ -15,7 +15,7 @@ const ProjectCard: React.FC<iProjectCard> = ({ project }) => {
   return (
     <ThemeCard padding={{ all: "2rem" }}>
       <FlexRow
-        gap=".4rem"
+        gap={{ default: '.4rem' }}
         flexWrap={{ default: "wrap" }}
         rowMargin={{ bottom: ".4rem" }}
       >

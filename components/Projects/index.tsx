@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
+import { iGithubRepoProps } from "../../interfaces/global";
 import { ThemeButton } from "../../styles/buttons";
 import { Container } from "../../styles/grid";
 import {
@@ -9,8 +10,11 @@ import {
 } from "../../styles/typography";
 import { TechMenu } from "../Techs/styles";
 import Nerdweb from "./Nerdweb";
+import Personal from "./Personal";
 
-const Projects = () => {
+
+
+const Projects: React.FC<iGithubRepoProps> = ({ repo, error }) => {
   const [currentTab, setCurrentTag] = useState("nerdweb");
   return (
     <Container
@@ -69,6 +73,7 @@ const Projects = () => {
         </li>
       </TechMenu>
       {currentTab === "nerdweb" && <Nerdweb />}
+      {currentTab === "pessoais" && <Personal repo={repo} error={error} />}
     </Container>
   );
 };

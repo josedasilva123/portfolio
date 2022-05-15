@@ -17,3 +17,8 @@ export interface iPadding{
     left?: string;
     right?: string;
 }
+
+export interface iGithubRepoProps{
+    repo?: any[],
+    error?: string,
+}
