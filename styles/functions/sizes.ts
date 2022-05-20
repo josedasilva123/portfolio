@@ -1,3 +1,4 @@
+import { breakpoints } from "../globals";
 export type tSizeList = {
     us?: string | number;
     xs?: string | number;
@@ -13,30 +14,23 @@ type tSizeFunction = (
 ) => string | number | undefined;
 
 export const LargerDefault: tSizeFunction = (prop) => {
+    const backupBreakpoint = breakpoints.find((breakpoint) => prop?.[breakpoint.name]);
     if(prop?.xl){
         return prop.xl;
-    } else if(prop?.lg){
-        return prop.lg;
-    } else if(prop?.md) {
-        return prop.md;
-    } else if (prop?.sm) {
-        return prop.sm;
-    } else if (prop?.xs) {
-        return prop.xs
+    } else if(backupBreakpoint){
+        return prop?.[backupBreakpoint.name];
     } else if (prop?.default){
         return prop.default;
     }
 }
 
 export const SmallerDefault: tSizeFunction = (prop) => {
-    if(prop?.xs){
-        return prop.xs;
-    } else if(prop?.sm){
-        return prop.sm;
-    } else if(prop?.md) {
-        return prop?.md;
-    } else if (prop?.lg) {
-        return prop?.lg;
+    //Lista reversa
+    const reversedBreakpoints = [...breakpoints].reverse();
+    const backupBreakpoint = reversedBreakpoints.find((breakpoint) => prop?.[breakpoint.name]);
+
+    if(backupBreakpoint){
+        return prop?.[backupBreakpoint.name];
     } else if (prop?.xl) {
         return prop?.xl
     } else if (prop?.default) {
