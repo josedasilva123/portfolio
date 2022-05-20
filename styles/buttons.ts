@@ -36,7 +36,7 @@ export const ThemeButton = styled(BaseButton)`
         `;
       case "sm":
         return css`
-        font-size: 0.875rem;
+          font-size: 0.875rem;
           padding: 0 1.5rem;
           height: 46px;
         `;
@@ -50,7 +50,7 @@ export const ThemeButton = styled(BaseButton)`
   }}
 
   //Button styles
-    ${(props) => {
+  ${(props) => {
     switch (props.buttonStyle) {
       //Solids
       case "solid1":
@@ -104,7 +104,7 @@ export const ThemeButton = styled(BaseButton)`
     }
   }}
   //Hover (Solid)
-    ${(props) => {
+  ${(props) => {
     if (props.buttonStyle.includes("solid")) {
       return css`
         &:hover {

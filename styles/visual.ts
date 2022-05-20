@@ -36,10 +36,10 @@ export const PercentBar = styled(BasePercentBar)`
   background: var(--colorDarkPrimary);
 
   border-radius: 255px;
+  
   transition: 0.3s;
   span {
     display: block;
-
     width: ${(props) => props.percentValue}%;
     height: 6px;
 
