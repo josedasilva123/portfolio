@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { techCategories, techList } from "../../data/techs";
+
 import { iTech } from "../../interfaces/global";
 
 import { ThemeButton } from "../../styles/buttons";
@@ -11,6 +12,7 @@ import {
   ThemeTitle,
 } from "../../styles/typography";
 import { TechMenu } from "./styles";
+
 import TechCard from "./TechCard";
 
 const Techs: React.FC = () => {
@@ -75,6 +77,7 @@ const Techs: React.FC = () => {
             Todas
           </ThemeButton>
         </TechMenu>
+        
         <FlexRow
           gap={{ default: '2rem'}}
           alignItems={{ default: "space-between" }}
