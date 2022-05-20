@@ -1,4 +1,5 @@
 export type tSizeList = {
+    us?: string | number;
     xs?: string | number;
     sm?: string | number;
     md?: string | number;
