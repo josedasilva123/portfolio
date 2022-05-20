@@ -35,10 +35,9 @@ export const Container = styled(BaseContainer)`
   padding-bottom: ${(props) =>
     getSizeValue(props.paddingBottom, props.paddingBottom?.xl, LargerDefault)};
 
-  ${(props) => {
-    let breakpointCss: CSSProp[] = [];
-    breakpoints.forEach((breakpoint) => {
-      breakpointCss.push(css`
+  ${(props) => (
+    breakpoints.map((breakpoint) => (
+      css`
         @media (max-width: ${breakpoint.break}px) {
           padding-top: ${getSizeValue(
               props.paddingTop,
@@ -51,10 +50,8 @@ export const Container = styled(BaseContainer)`
               breakpoint.reverse ? SmallerDefault : LargerDefault
             )};
         }
-      `);
-    });
-    return breakpointCss;
-  }}
+      `))
+  )}
 
   //Tamanho do Container
   ${(props) => {
@@ -77,6 +74,7 @@ export const Container = styled(BaseContainer)`
 
 //Row com display flex configurável
 export const FlexRow = styled(BaseFlexRow)`
+  
   width: 100%;
   display: flex;
   gap: ${(props) => getSizeValue(props.gap, props.gap?.xl, LargerDefault)};
@@ -93,14 +91,13 @@ export const FlexRow = styled(BaseFlexRow)`
     getSizeValue(props.flexDirection, props.flexDirection?.xl, LargerDefault)};
   flex-wrap: ${(props) =>
     getSizeValue(props.flexWrap, props.flexWrap?.xl, LargerDefault)};
-
+  
   //Criação de breakpoint conforme configuração
-  ${(props) => {
-    let breakpointCss: CSSProp[] = [];
-    breakpoints.forEach((breakpoint) => {
-      breakpointCss.push(css`
+  ${(props) => (
+    breakpoints.map((breakpoint) => (
+      css`
         @media (max-width: ${breakpoint.break}px) {
-          gap: ${getSizeValue(props.gap, props.gap?.lg, LargerDefault)};
+          gap: ${getSizeValue(props.gap, props.gap?.[breakpoint.name], LargerDefault)};
           align-items: ${getSizeValue(
             props.alignItems,
             props.alignItems?.[breakpoint.name],
@@ -122,10 +119,8 @@ export const FlexRow = styled(BaseFlexRow)`
             breakpoint.reverse ? SmallerDefault : LargerDefault
           )};
         }
-      `);
-    });
-    return breakpointCss;
-  }}
+      `))
+  )}
 
   margin-top: ${(props) => props.rowMargin?.top};
   margin-bottom: ${(props) => props.rowMargin?.bottom};
@@ -139,10 +134,9 @@ export const Col = styled(BaseCol)`
   );
 
   //Criação de breakpoint conforme configuração
-  ${(props) => {
-    let breakpointCss: CSSProp[] = [];
-    breakpoints.forEach((breakpoint) => {
-      breakpointCss.push(css`
+  ${(props) => (    
+    breakpoints.map((breakpoint) => (
+      css`
         @media (max-width: ${breakpoint.break}px) {
           width: calc(
             ${getSizeValue(
@@ -152,8 +146,6 @@ export const Col = styled(BaseCol)`
             )}
           );
         }
-      `);
-    });
-    return breakpointCss;
-  }}
+      `)) 
+  )}
 `;
