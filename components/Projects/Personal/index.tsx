@@ -64,7 +64,7 @@ const Personal: React.FC<iGithubRepoProps> = ({ repo, error }) => {
                 componentes escaláveis com comportamento diferenciado.
               </li>
               <li>
-                <b>pokedux:</b> o Pokedux uni duas coisas que eu amo:
+                <b>pokedux:</b> o Pokedux une duas coisas que eu amo:
                 desenvolvimento e games. Iniciado como um estudo em redux, o
                 pokedux hoje conta com uma diversidade de features
                 interessantes, incluindo: montagem de times, ordenação de time
