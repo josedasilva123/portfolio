@@ -17,6 +17,10 @@ export const DefaultColors = createGlobalStyle`
     --colorSecondaryButton: #9DCCC5;
     --colorPrimaryButton: #8FC9ED;  
 
+    //Card
+    --colorCardBackgroundPrimary: #1F3136;
+    --colorCardBackgroundSecondary: #133835;
+
     //Custom
     --colorWhiteOpacity60: rgba(255,255,255, .6);
     --colorPrimaryOpacity20: #8FC9ED3F;  
@@ -40,6 +44,10 @@ export const LightThemeColors = createGlobalStyle`
     --colorPrimaryButton: #559DCA;
     --colorSecondaryButton: #3B4D4A;  
 
+    //Card
+    --colorCardBackgroundPrimary: #D7F0F7;
+    --colorCardBackgroundSecondary: #9BFBF6;
+
     //Custom
     --colorWhiteOpacity60: rgba(9,9,9, .6);
     --colorPrimaryOpacity20: #559DCA3F; 
@@ -62,7 +70,13 @@ export const DefaultFonts = createGlobalStyle`
 `;
 
 //Configuração de reset + configurações globais do projeto
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle` 
+  :root{
+    //Arredontamento de elementos
+    --ButtonRadius: 255px;
+    --CardRadius: 16px;
+    --PercentBarRadius: 255px;
+  }
   *{
       box-sizing: border-box;
       margin: 0;

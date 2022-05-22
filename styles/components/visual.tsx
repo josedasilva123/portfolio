@@ -10,6 +10,7 @@ interface iPercentBar{
 interface iCard{
   children?: React.ReactNode;
   className?: string; 
+  cardStyle?: 'solid1' | 'solid1b' | 'solid2' | 'solid2b';
   padding?: iPadding;
 }
 

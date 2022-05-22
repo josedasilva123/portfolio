@@ -15,8 +15,35 @@ export const ThemeCard = styled(BaseCard)`
   padding-left: ${(props) => props.padding?.left};
   padding-right: ${(props) => props.padding?.right};
 
-  border-radius: 1rem;
-  border: 2px solid var(--colorPrimaryOpacity20);
+  ${(props) => {
+    switch(props.cardStyle){
+       case 'solid1':
+        return css`
+          background: var(--colorCardBackgroundPrimary);
+        `
+      case 'solid1b':
+        return css`
+          background: var(--colorCardBackgroundPrimary);
+          border: 2px solid var(--colorPrimaryOpacity20);
+        `  
+      case 'solid2':
+        return css`
+          background: var(--colorCardBackgroundSecondary);
+        `
+      case 'solid2b':
+        return css`
+          background: var(--colorCardBackgroundSecondary);
+          border: 2px solid var(--colorPrimaryOpacity20);
+        `    
+      default:
+        return css`
+          border: 2px solid var(--colorPrimaryOpacity20);
+        `  
+    }
+  }}
+
+  border-radius: var(--CardRadius);
+  
 
   animation: fadeIn 0.4s forwards;
   @keyframes fadeIn {
@@ -35,7 +62,7 @@ export const PercentBar = styled(BasePercentBar)`
 
   background: var(--colorDarkPrimary);
 
-  border-radius: 255px;
+  border-radius: var(--PercentBarRadius);
   
   transition: 0.3s;
   span {
@@ -43,7 +70,7 @@ export const PercentBar = styled(BasePercentBar)`
     width: ${(props) => props.percentValue}%;
     height: 6px;
 
-    border-radius: 255px;
+    border-radius: var(--PercentBarRadius);
     //Cor da barra
     ${(props) => backgroundColor(props.backgroundColor)}
   }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { tSizeList } from '../functions/sizes'
+import { tSizeList } from '../config/breakpoints';
 import { iMargin } from './general';
 
 interface iContainer{

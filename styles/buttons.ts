@@ -9,7 +9,7 @@ export const ThemeButton = styled(BaseButton)`
 
   font-weight: 700;
 
-  border-radius: 255px;
+  border-radius: var(--ButtonRadius);
 
   transition: 0.3s;
 
