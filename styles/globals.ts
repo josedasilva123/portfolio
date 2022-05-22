@@ -1,40 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-//Configure os breakpoints
-
-interface iBreakpoint{
-  name: 'xl' | 'lg' | 'md' | 'sm' | 'xs' | 'us';
-  break: number;
-  reverse: boolean;
-}
-
-export const breakpoints: iBreakpoint[] = [
-  {
-    name: 'lg',
-    break: 1368,
-    reverse: false,
-  },
-  {
-    name: 'md',
-    break: 1024,
-    reverse: false,
-  },
-  {
-    name: 'sm',
-    break: 768,
-    reverse: true,
-  },
-  {
-    name: 'xs',
-    break: 425,
-    reverse: true,
-  },
-  {
-    name: 'us',
-    break: 350,
-    reverse: true,
-  },
-]
 //Paleta de cores padrão
 export const DefaultColors = createGlobalStyle`
   :root{
@@ -96,6 +61,7 @@ export const DefaultFonts = createGlobalStyle`
   }
 `;
 
+//Configuração de reset + configurações globais do projeto
 export const GlobalStyle = createGlobalStyle`
   *{
       box-sizing: border-box;
@@ -107,16 +73,17 @@ export const GlobalStyle = createGlobalStyle`
   }
   ul, ol, li{
     list-style: none;
-  }
-  body {
-    background: linear-gradient(var(--colorBlack), var(--colorDarkPrimary)) no-repeat;
-    background-size: cover;
-  }
+  }  
   button {
     cursor: pointer;
     padding: 0;
     margin: 0;
     background: transparent;
     border: none;  
+  }
+  //Seus estilos
+  body {
+    background: linear-gradient(var(--colorBlack), var(--colorDarkPrimary)) no-repeat;
+    background-size: cover;
   }
 `;

@@ -1,6 +1,6 @@
-import styled, { css, CSSProp } from "styled-components";
+import styled, { css } from "styled-components";
 import { BaseContainer, BaseFlexRow, BaseCol } from "./components/grid";
-import { breakpoints } from "./globals";
+import { breakpoints } from './config/breakpoints';
 import { getSizeValue, LargerDefault, SmallerDefault } from "./functions/sizes";
 
 //Sistema de Grid
@@ -34,7 +34,8 @@ export const Container = styled(BaseContainer)`
     getSizeValue(props.paddingTop, props.paddingTop?.xl, LargerDefault)};
   padding-bottom: ${(props) =>
     getSizeValue(props.paddingBottom, props.paddingBottom?.xl, LargerDefault)};
-
+  
+  //Criação de breakpoints conforme configuração
   ${(props) => (
     breakpoints.map((breakpoint) => (
       css`
@@ -92,7 +93,7 @@ export const FlexRow = styled(BaseFlexRow)`
   flex-wrap: ${(props) =>
     getSizeValue(props.flexWrap, props.flexWrap?.xl, LargerDefault)};
   
-  //Criação de breakpoint conforme configuração
+  //Criação de breakpoints conforme configuração
   ${(props) => (
     breakpoints.map((breakpoint) => (
       css`
@@ -133,7 +134,7 @@ export const Col = styled(BaseCol)`
     ${(props) => getSizeValue(props.size, props.size?.xl, LargerDefault)}
   );
 
-  //Criação de breakpoint conforme configuração
+  //Criação de breakpoints conforme configuração
   ${(props) => (    
     breakpoints.map((breakpoint) => (
       css`

@@ -135,6 +135,4 @@ export const ThemeList = styled(BaseList)`
     li{
         list-style: ${(props) => props.listStyle};
     }
-    
-    
 `

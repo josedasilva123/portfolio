@@ -1,13 +1,4 @@
-import { breakpoints } from "../globals";
-export type tSizeList = {
-    us?: string | number;
-    xs?: string | number;
-    sm?: string | number;
-    md?: string | number;
-    lg?: string | number;
-    xl?: string | number;
-    default?: string | number;
-}
+import { breakpoints, tSizeList } from "../config/breakpoints";
 
 type tSizeFunction = (
    prop: tSizeList | undefined,
