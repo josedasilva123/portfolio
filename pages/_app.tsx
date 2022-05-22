@@ -3,10 +3,12 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import Header from "../components/Header";
 
-import { GlobalStorage, GlobalContext } from "../contexts/GlobalContext";
+import Providers from "../contexts/Providers";
+
 import {  DefaultFonts, GlobalStyle } from "../styles/globals";
 
 import Colors from "../components/Global/Colors";
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,13 +19,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         />
       </Head>
-      <GlobalStorage>        
-        <DefaultFonts />
+      <Providers>
+      <DefaultFonts />
         <Colors />        
         <GlobalStyle />
         <Header />
         <Component {...pageProps} />        
-      </GlobalStorage>
+      </Providers>       
     </>
   );
 }
