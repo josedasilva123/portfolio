@@ -13,6 +13,9 @@ export const ThemeButton = styled(BaseButton)`
 
   transition: 0.3s;
 
+  //Fullwidth
+  ${(props) => props.fullWidth && css`width: 100%;`}
+
   //Button sizes
   ${(props) => {
     switch (props.buttonSize) {

@@ -113,7 +113,7 @@ const Testmonials = () => {
         <Form gap="1rem" formFields={[nome, email]} submitCallback={() => console.log('Foi')}>
           <FormInput size="md" label="Nome" name="nome" type="text" inputProps={nome.inputProps}/>
           <FormInput size="md" label="Email" name="email" type="email" inputProps={email.inputProps}/>
-          <ThemeButton type="submit" buttonSize="md" buttonStyle="solid1">Enviar</ThemeButton>
+          <ThemeButton type="submit" buttonSize="lg" buttonStyle="solid1" fullWidth={true}>Enviar</ThemeButton>
         </Form>        
       </ThemeModal>
     </>
