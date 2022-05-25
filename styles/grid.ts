@@ -129,7 +129,8 @@ export const FlexRow = styled(BaseFlexRow)`
 
 //Col com largura orientada em %
 export const Col = styled(BaseCol)`
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: calc(
     ${(props) => getSizeValue(props.size, props.size?.xl, LargerDefault)}
   );

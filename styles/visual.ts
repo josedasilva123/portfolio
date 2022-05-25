@@ -5,8 +5,7 @@ import { backgroundColor } from "./functions/visual";
 export const ThemeCard = styled(BaseCard)`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  flex: 1;
 
   padding: ${(props) => props.padding?.all};
 

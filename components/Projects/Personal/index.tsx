@@ -82,8 +82,8 @@ const Personal: React.FC<iGithubRepoProps> = ({ repo, error }) => {
         flexWrap={{ default: "wrap" }}
         rowMargin={{ top: "2rem" }}
       >
-        {repo?.map((r) => (
-          <Col key={r.key} size={{ lg: "(100% - 4rem)/3", md: "100%" }}>
+        {repo?.map((r, index) => (
+          <Col key={index} size={{ lg: "(100% - 4rem)/3", md: "100%" }}>
             <ThemeCard padding={{ all: "2rem" }}>
               <ThemeTag tagType="solid" tagColor="primary">
                 {r.language}

@@ -10,8 +10,8 @@ export const DefaultColors = createGlobalStyle`
     --colorSecondary: #9DCCC5;
 
     //Button
-    --colorBlackSolidButton: #090909;
-    --colorWhiteSolidButton: #FFFFFF; 
+    --colorBlackSolidButton: #FFFFFF;
+    --colorWhiteSolidButton: #090909; 
     --colorBlackOutlineButton: #090909;
     --colorWhiteOutlineButton: #FFF; 
     --colorSecondaryButton: #9DCCC5;
@@ -20,6 +20,11 @@ export const DefaultColors = createGlobalStyle`
     //Card
     --colorCardBackgroundPrimary: #1F3136;
     --colorCardBackgroundSecondary: #133835;
+
+     //Form Colors
+     --colorInputText: #FFFFFF; 
+     --colorInputBackground: #1F3136;
+     --colorInputBorder: #8FC9ED;
 
     //Custom
     --colorWhiteOpacity60: rgba(255,255,255, .6);
@@ -33,7 +38,7 @@ export const LightThemeColors = createGlobalStyle`
     //Main
     --colorBlack: #FFFFFF;
     --colorWhite: #090909;    
-    --colorPrimary: #559DCA;
+    --colorPrimary: #285C7D;
     --colorSecondary: #3B4D4A;
 
     //Button
@@ -41,12 +46,17 @@ export const LightThemeColors = createGlobalStyle`
     --colorWhiteSolidButton: #FFFFFF; 
     --colorBlackOutlineButton: #FFFFFF;
     --colorWhiteOutlineButton: #090909; 
-    --colorPrimaryButton: #559DCA;
+    --colorPrimaryButton: #285C7D;
     --colorSecondaryButton: #3B4D4A;  
 
     //Card
     --colorCardBackgroundPrimary: #D7F0F7;
     --colorCardBackgroundSecondary: #9BFBF6;
+
+    //Form Colors
+    --colorInputText: #090909;
+    --colorInputBackground: #D7F0F7;
+    --colorInputBorder: #285C7D;
 
     //Custom
     --colorWhiteOpacity60: rgba(9,9,9, .6);
@@ -76,6 +86,10 @@ export const GlobalStyle = createGlobalStyle`
     --ButtonRadius: 255px;
     --CardRadius: 16px;
     --PercentBarRadius: 255px;
+    --InputRadius: 4px;
+    
+    //Configuração de formulário
+    --InputBorder: none;
   }
   *{
       box-sizing: border-box;

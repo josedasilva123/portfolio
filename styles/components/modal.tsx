@@ -1,10 +1,21 @@
 import React from "react";
 import { MdClose } from "react-icons/md";
 import { useClickOutisde } from "../../hooks/useOutsideClick";
+import { tSizeList } from "../config/breakpoints";
+
+interface iModalPosition{
+    h: 'left' | 'center' | 'right';
+    v: 'top' | 'center' | 'bottom';
+}
 
 interface iModal {
   children: React.ReactNode;
   className?: string;
+  modalPosition: iModalPosition;
+  modalPadding?: tSizeList;
+  modalMaxWidth?: string;
+  modalHeight?: string;
+  modalScroll?: boolean;
   active: boolean;
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -22,7 +33,7 @@ export const BaseModal: React.FC<iModal> = ({
         <div className={className}>
           <div className="overlay">
             <div className="box" ref={modalBox}>
-              <button onClick={() => setActive(false)}>
+              <button className="close" onClick={() => setActive(false)}>
                 <MdClose size={24} />
               </button>
               {children}

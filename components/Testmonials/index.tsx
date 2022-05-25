@@ -1,25 +1,33 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import { TestmonialContext } from "../../contexts/TestmonialContext";
+import { iTestmonial, TestmonialContext } from "../../contexts/TestmonialContext";
 
 import { ThemeButton } from "../../styles/buttons";
 import { Container, FlexRow, Col } from "../../styles/grid";
 import {
-  ThemeLabel,
-  ThemeParagraph,
   ThemeTitle,
 } from "../../styles/typography";
-import { ThemeCard } from "../../styles/visual";
 
 import { MdSend } from "react-icons/md";
+import TestmonialCard from "./TesmonialCard";
+import { ThemeModal } from "../../styles/modal";
+import { Form, FormInput } from "../../styles/form";
+import validateInput from "../../hooks/form/validateInput";
 
 const Testmonials = () => {
   const { testmonials } = useContext(TestmonialContext);
-  const [testShortList, setTestShotList] = useState<string[]>([]);
+  const [testShortList, setTestShotList] = useState<iTestmonial[]>([]);
+  const [testmonialModal, setTestmonialModal] = useState(false);
+  const nome = validateInput({
+    minLength: 5,
+  });
+  const email = validateInput({
+    type: "email",
+  });
 
   useEffect(() => {
-    const newTestList: string[] = testmonials.filter(
-      (testmonial) => testmonial[3] === "yes"
+    const newTestList: iTestmonial[] = testmonials.filter(
+      (testmonial) => testmonial?.approved === "yes"
     );
     if (newTestList.length > 0) {
       newTestList.length = 3;
@@ -29,82 +37,86 @@ const Testmonials = () => {
   }, [testmonials]);
 
   return (
-    <Container
-      containerPadding="sm"
-      paddingTop={{ default: "4rem" }}
-      paddingBottom={{ default: "5rem" }}
-    >
-      <ThemeTitle
-        titleTag="h2"
-        titleSize="title1"
-        titleColor="white"
-        titleAlign="center"
-      >
-        Depoimentos
-      </ThemeTitle>
-
-      <ThemeTitle
-        titleTag="h3"
-        titleSize="subtitle"
-        titleColor="primary"
-        titleAlign="center"
-        titleMargin={{ bottom: "2rem" }}
-      >
-        O que colegas, clientes e alunos tem a dizer sobre mim
-      </ThemeTitle>
-
-      <FlexRow gap={{ default: "2rem" }} flexWrap={{ default: "wrap" }}>
-        {testShortList.length > 0 ? (
-          <>
-            {testShortList.map((testmonial, index) => (
-              <Col key={index} size={{ lg: "(100% - 4rem)/3", md: "100%" }}>
-                <ThemeCard padding={{ all: "2rem" }} cardStyle="solid1">
-                  <ThemeParagraph
-                    paragraphColor="white"
-                    paragraphMargin={{ bottom: "1rem" }}
-                  >
-                    {testmonial[0]}
-                  </ThemeParagraph>
-
-                  <ThemeTitle
-                    titleTag="h3"
-                    titleSize="subtitle"
-                    titleColor="white"
-                    titleMargin={{ bottom: ".2rem" }}
-                  >
-                    {testmonial[1]}
-                  </ThemeTitle>
-
-                  <ThemeLabel labelColor="primary">{testmonial[2]}</ThemeLabel>
-                </ThemeCard>
-              </Col>
-            ))}
-          </>
-        ) : (
-          <FlexRow justifyContent={{ default: "center" }}>
-            <ThemeTitle
-              titleTag="h3"
-              titleSize="subtitle"
-              titleColor="secondary"
-              titleAlign="center"
-            >
-              Parece que não temos nenhum depoimentos ainda, seja o primeira a
-              publicar! :D
-            </ThemeTitle>
-          </FlexRow>
-        )}
-
-        <FlexRow
-          justifyContent={{ default: "center" }}
-          rowMargin={{ top: "2rem" }}
+    <>
+      {/* Bloco de depoimentos */}
+      <section>
+        <Container
+          containerPadding="sm"
+          paddingTop={{ default: "4rem" }}
+          paddingBottom={{ default: "5rem" }}
         >
-          <ThemeButton buttonStyle="solid1" buttonSize="lg">
-            <MdSend size={24} /> Enviar depoimento
-          </ThemeButton>
-        </FlexRow>
-      </FlexRow>
+          <ThemeTitle
+            titleTag="h2"
+            titleSize="title1"
+            titleColor="white"
+            titleAlign="center"
+          >
+            Depoimentos
+          </ThemeTitle>
 
-    </Container>
+          <ThemeTitle
+            titleTag="h3"
+            titleSize="subtitle"
+            titleColor="primary"
+            titleAlign="center"
+            titleMargin={{ bottom: "2rem" }}
+          >
+            O que colegas, clientes e alunos tem a dizer sobre mim
+          </ThemeTitle>
+
+          <FlexRow gap={{ default: "2rem" }} flexWrap={{ default: "wrap" }}>
+            {testShortList.length > 0 ? (
+              <>
+                {testShortList.map((testmonial, index) => (
+                  <Col key={index} size={{ lg: "(100% - 4rem)/3", md: "100%" }}>
+                    <TestmonialCard testmonial={testmonial} />
+                  </Col>
+                ))}
+              </>
+            ) : (
+              <FlexRow justifyContent={{ default: "center" }}>
+                <ThemeTitle
+                  titleTag="h3"
+                  titleSize="subtitle"
+                  titleColor="secondary"
+                  titleAlign="center"
+                >
+                  Parece que não temos nenhum depoimentos ainda, seja o primeira
+                  a publicar! :D
+                </ThemeTitle>
+              </FlexRow>
+            )}
+
+            <FlexRow
+              justifyContent={{ default: "center" }}
+              rowMargin={{ top: "2rem" }}
+            >
+              <ThemeButton
+                onClick={() => setTestmonialModal(true)}
+                buttonStyle="solid1"
+                buttonSize="lg"
+              >
+                <MdSend size={24} /> Enviar depoimento
+              </ThemeButton>
+            </FlexRow>
+          </FlexRow>
+        </Container>
+      </section>
+
+      {/* Modal de depoimentos */}
+      <ThemeModal
+        active={testmonialModal}
+        setActive={setTestmonialModal}
+        modalPadding={{ default: "2rem" }}
+        modalPosition={{ h: 'center', v: 'center'}}
+      >
+        <Form gap="1rem" formFields={[nome, email]} submitCallback={() => console.log('Foi')}>
+          <FormInput size="md" label="Nome" name="nome" type="text" inputProps={nome.inputProps}/>
+          <FormInput size="md" label="Email" name="email" type="email" inputProps={email.inputProps}/>
+          <ThemeButton type="submit" buttonSize="md" buttonStyle="solid1">Enviar</ThemeButton>
+        </Form>        
+      </ThemeModal>
+    </>
   );
 };
 

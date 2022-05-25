@@ -2,9 +2,16 @@ import axios from "axios";
 import { useState, createContext } from "react";
 
 //Interfaces
+export interface iTestmonial{
+    text: string;
+    name: string;
+    title: string;
+    approved: 'yes' | 'no';
+}
+
 interface iTestmonialContext{
-    testmonials: string[] | [];
-    setTestmonials: React.Dispatch<React.SetStateAction<string[]>>
+    testmonials: iTestmonial[] | [];
+    setTestmonials: React.Dispatch<React.SetStateAction<iTestmonial[]>>
     sendTestmonial: (
         body: iSendTestmonialBody,
         callback: () => void
@@ -28,7 +35,7 @@ export const TestmonialContext = createContext<iTestmonialContext>({
 });
 
 export const TestmonialStorage: React.FC<iTestmonialStorage> = ({children}) => {
-    const [testmonials, setTestmonials] = useState<string[] | []>([]);
+    const [testmonials, setTestmonials] = useState<iTestmonial[] | []>([]);
 
     async function sendTestmonial(body: iSendTestmonialBody, callback: () => void){
         try {

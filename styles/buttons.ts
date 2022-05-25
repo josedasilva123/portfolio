@@ -7,7 +7,7 @@ export const ThemeButton = styled(BaseButton)`
   justify-content: center;
   gap: 0.6rem;
 
-  font-weight: 700;
+  font-weight: 500;
 
   border-radius: var(--ButtonRadius);
 
