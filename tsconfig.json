@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "styles/globals.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "styles/globals.ts", "hooks/validateInput.jsx", "hooks/validateSelect.jsx", "hooks/form/validateCheckbox.jsx"],
   "exclude": ["node_modules"]
 }
