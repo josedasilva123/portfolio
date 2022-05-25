@@ -83,6 +83,7 @@ const Techs: React.FC = () => {
           alignItems={{ default: "space-between" }}
           flexWrap={{ default: "wrap" }}
           rowMargin={{ top: "2rem" }}
+          rowTag="ul"
         >
           {(filterList ? filterList : techList).map((tech) => (
             <Col

@@ -81,6 +81,7 @@ const Personal: React.FC<iGithubRepoProps> = ({ repo, error }) => {
         gap={{ default: "2rem" }}
         flexWrap={{ default: "wrap" }}
         rowMargin={{ top: "2rem" }}
+        rowTag="ul"
       >
         {repo?.map((r, index) => (
           <Col key={index} size={{ lg: "(100% - 4rem)/3", md: "100%" }}>

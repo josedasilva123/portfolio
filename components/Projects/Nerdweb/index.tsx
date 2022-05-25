@@ -10,8 +10,11 @@ import ProjectCard from "./ProjectCard";
 
 const Nerdweb = () => {
   return (
-    <Container paddingTop={{ xl: '4rem', md: '3rem' }}>
-      <FlexRow gap={{ xl: '4rem', md: '2rem'}} flexDirection={{ lg: "row", md: "column" }}>
+    <Container paddingTop={{ xl: "4rem", md: "3rem" }}>
+      <FlexRow
+        gap={{ xl: "4rem", md: "2rem" }}
+        flexDirection={{ lg: "row", md: "column" }}
+      >
         <Col size={{ lg: "40%", md: "100%" }}>
           <ThemeTitle titleTag="h3" titleSize="title2" titleColor="white">
             Nerdweb
@@ -36,9 +39,10 @@ const Nerdweb = () => {
       </FlexRow>
 
       <FlexRow
-        gap={{ default: '2rem' }}
+        gap={{ default: "2rem" }}
         flexWrap={{ default: "wrap" }}
         rowMargin={{ top: "2rem" }}
+        rowTag="ul"
       >
         {nerdwebProjects.map((project) => (
           <Col key={project.name} size={{ lg: "(100% - 2rem)/2", md: "100%" }}>
