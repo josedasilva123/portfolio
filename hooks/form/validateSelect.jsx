@@ -29,11 +29,12 @@ const validateSelect = (props) => {
 
   return {
     selectProps: {
+      value,
+      name: props?.name,
       onChange,
       error,
     },
     type: 'select',
-    value,
     setValue,
     setError,
     validate: () => validate(),

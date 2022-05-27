@@ -170,6 +170,7 @@ const validateInput = (props) => {
   return {
     inputProps: {
       value,
+      name: props?.name,
       onChange,
       onKeyUp,
       onBlur: () => validate(),

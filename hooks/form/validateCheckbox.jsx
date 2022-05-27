@@ -28,11 +28,12 @@ const validateCheckbox = (props) => {
 
   return {
     checkProps: {
+      value,
+      name: props?.name,
       onChange,
       error,
     },
-    type: 'checkbox',
-    value,
+    type: 'checkbox', 
     setValue,
     setError,
     validate: () => validate(),
