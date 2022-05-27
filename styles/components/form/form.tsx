@@ -6,20 +6,28 @@ interface iForm{
     gap?: string;
     formFields: any[];
     keepFieldsOnSubmit?: boolean;
-    submitCallback: () => void;
+    submitCallback: (valueList: any[]) => void;
 }
 
 const BaseForm: React.FC<iForm> = ({children, className, formFields, keepFieldsOnSubmit, submitCallback}) => {
 
   function handleSubmit(event: React.SyntheticEvent){
     event.preventDefault();
+
     //Executa todas as validações
     const validationList = formFields.map(field => field.validate());
+
     //Verifica se todas as validações são válidas
     if(validationList.every(validation => validation)){
+        //Condensa os valores dos campos um objeto data (LX Hook Form)
+        const formData = formFields.reduce((dataObject, currentItem) => {
+          console.log(currentItem)
+          dataObject[currentItem.inputProps.name] = currentItem.inputProps.value;     
+          return dataObject;     
+        }, {})
         
-        submitCallback(); //Executa função de callback
-
+        submitCallback(formData); //Executa função de callback passando o formData
+        
         //Função de limpeza de campos
         if(!keepFieldsOnSubmit){
             formFields.forEach(field => {
@@ -37,4 +45,4 @@ const BaseForm: React.FC<iForm> = ({children, className, formFields, keepFieldsO
   )
 }
 
-export default BaseForm
+export default BaseForm;
