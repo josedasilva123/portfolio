@@ -1,29 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import { iTestmonial, TestmonialContext } from "../../contexts/TestmonialContext";
+import {
+  iTestmonial,
+  TestmonialContext,
+} from "../../contexts/TestmonialContext";
 
 import { ThemeButton } from "../../styles/buttons";
 import { Container, FlexRow, Col } from "../../styles/grid";
-import {
-  ThemeTitle,
-} from "../../styles/typography";
+import { ThemeTitle } from "../../styles/typography";
+import { ThemeModal } from "../../styles/modal";
 
 import { MdSend } from "react-icons/md";
-import TestmonialCard from "./TesmonialCard";
-import { ThemeModal } from "../../styles/modal";
-import { Form, FormInput } from "../../styles/form";
-import validateInput from "../../hooks/form/validateInput";
+
+import TestmonialCard from "./TestmonialCard";
+import TestmonialForm from "./TestmonialForm";
 
 const Testmonials = () => {
   const { testmonials } = useContext(TestmonialContext);
   const [testShortList, setTestShotList] = useState<iTestmonial[]>([]);
   const [testmonialModal, setTestmonialModal] = useState(false);
-  const nome = validateInput({
-    minLength: 5,
-  });
-  const email = validateInput({
-    type: "email",
-  });
 
   useEffect(() => {
     const newTestList: iTestmonial[] = testmonials.filter(
@@ -108,13 +103,9 @@ const Testmonials = () => {
         active={testmonialModal}
         setActive={setTestmonialModal}
         modalPadding={{ default: "2rem" }}
-        modalPosition={{ h: 'center', v: 'center'}}
+        modalPosition={{ h: "center", v: "center" }}
       >
-        <Form gap="1rem" formFields={[nome, email]} submitCallback={() => console.log('Foi')}>
-          <FormInput size="md" label="Nome" name="nome" type="text" inputProps={nome.inputProps}/>
-          <FormInput size="md" label="Email" name="email" type="email" inputProps={email.inputProps}/>
-          <ThemeButton type="submit" buttonSize="lg" buttonStyle="solid1" fullWidth={true}>Enviar</ThemeButton>
-        </Form>        
+        <TestmonialForm />
       </ThemeModal>
     </>
   );
