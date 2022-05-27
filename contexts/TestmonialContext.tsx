@@ -12,20 +12,18 @@ export interface iTestmonial{
 interface iTestmonialContext{
     testmonials: iTestmonial[] | [];
     setTestmonials: React.Dispatch<React.SetStateAction<iTestmonial[]>>
-    sendTestmonial: (
-        body: iSendTestmonialBody,
-        callback: () => void
-    ) => void;
+    sendTestmonial: tSendTestmonial;
 }
+
 interface iTestmonialStorage {
     children: React.ReactNode;
 }
 
 interface iSendTestmonialBody {
-    emailTo: string;
     name: string;
     title: string;
     text: string;
+    collection: string;
 }
 
 export const TestmonialContext = createContext<iTestmonialContext>({
@@ -34,20 +32,33 @@ export const TestmonialContext = createContext<iTestmonialContext>({
     sendTestmonial: () => {},
 });
 
+interface iSendTestmonialOptions{
+    callback?: () => void;
+    setLoading?: React.Dispatch<React.SetStateAction<boolean>>;
+    setError?: React.Dispatch<React.SetStateAction<string>>;
+}
+type tSendTestmonial = (
+    body: iSendTestmonialBody,
+    options: iSendTestmonialOptions,
+    
+) => void;
+
 export const TestmonialStorage: React.FC<iTestmonialStorage> = ({children}) => {
     const [testmonials, setTestmonials] = useState<iTestmonial[] | []>([]);
 
-    async function sendTestmonial(body: iSendTestmonialBody, callback: () => void){
+    const sendTestmonial: tSendTestmonial = async(body, options) =>{
         try {
-            const response = await axios.post('https://alex-conder-portfolio-api.herokuapp.com/', {
-                body,
+            options.setLoading?.(true);
+            const response = await axios.post('https://alex-conder-portfolio-api.herokuapp.com/sheets/rows', {
+                ...body,
             })  
-            console.log(response);
             //Função callback opcional
-            callback();
+            options.callback?.();
         } catch (error) {
             console.log(error);
-        }       
+        } finally {
+            options.setLoading?.(false);
+        }      
     }
 
     return (
