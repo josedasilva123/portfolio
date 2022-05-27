@@ -21,6 +21,36 @@ export const FormInput = styled(BaseInput)`
     margin-bottom: 0.4rem;
   }
 
+  textarea{
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: ${(props) => props.textAreaHeight ? props.textAreaHeight : 150}px;
+    height: ${(props) => props.textAreaHeight ? props.textAreaHeight : 150}px;
+    max-height: ${(props) => props.textAreaMaxHeight ? props.textAreaMaxHeight : 200}px;
+
+    padding: 1rem;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    border: var(--InputBorder);
+    ${(props) => props.inputProps.error && css`border: 1px solid red;`}
+
+    background: var(--colorInputBackground);
+    color: var(--colorInputText);
+
+    border-radius: var(--InputRadius);
+
+    &:focus,
+    &:active {
+      outline-color: var(--colorWhite);
+      outline-style: double;
+      filter: brightness(1.1);
+    }
+  }
+
   input {
     width: 100%;
 
