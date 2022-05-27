@@ -4,6 +4,7 @@ import { backgroundColor } from "./functions/visual";
 
 export const ThemeCard = styled(BaseCard)`
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   flex: 1;
 
