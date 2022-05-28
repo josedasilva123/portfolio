@@ -104,8 +104,10 @@ const Testmonials = () => {
         setActive={setTestmonialModal}
         modalPadding={{ default: "2rem" }}
         modalPosition={{ h: "center", v: "center" }}
+        modalScroll={true}
+        modalMaxHeight="100vh"
       >
-        <TestmonialForm />
+        <TestmonialForm setTestmonialModal={setTestmonialModal}/>
       </ThemeModal>
     </>
   );
