@@ -21,7 +21,6 @@ const BaseForm: React.FC<iForm> = ({children, className, formFields, keepFieldsO
     if(validationList.every(validation => validation)){
         //Condensa os valores dos campos um objeto data (LX Hook Form)
         const formData = formFields.reduce((dataObject, currentItem) => {
-          console.log(currentItem)
           dataObject[currentItem.inputProps.name] = currentItem.inputProps.value;     
           return dataObject;     
         }, {})
