@@ -15,6 +15,7 @@ interface iModal {
   modalPadding?: tSizeList;
   modalMaxWidth?: string;
   modalHeight?: string;
+  modalMaxHeight?: string;
   modalScroll?: boolean;
   active: boolean;
   setActive: React.Dispatch<React.SetStateAction<boolean>>;

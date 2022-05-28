@@ -21,6 +21,7 @@ interface iFlexRow {
   flexDirection?: tSizeList;
   flexWrap?: tSizeList;
   rowTag?: "ul" | "ol";
+  rowPadding?: tSizeList;
 }
 
 interface iCol {

@@ -59,7 +59,7 @@ export const ThemeModal = styled(BaseModal)`
 
     //Largura
     height: ${(props) => props.modalHeight};
-    max-height: ${(props) => props.modalHeight};
+    max-height: ${(props) => props.modalMaxHeight};
 
     //Overflow scroll
     ${(props) =>
