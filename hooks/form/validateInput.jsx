@@ -124,7 +124,6 @@ const validateInput = (props) => {
     if (value.length === 0) {
       setError("Preencha um valor.");
       return false;
-
     //Se campo estiver abaixo do mínimo de caracteres  
     } else if (props?.minLength && value.length < props?.minLength){
       setError(`Este campo precisa conter pelo menos ${props?.minLength} digitos.`);
