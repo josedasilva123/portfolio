@@ -49,7 +49,7 @@ export const TestmonialStorage: React.FC<iTestmonialStorage> = ({children}) => {
     const sendTestmonial: tSendTestmonial = async(body, options) =>{
         try {
             options.setLoading?.(true);
-            const response = await axios.post('https://alex-conder-portfolio-api.herokuapp.com/sheets/rows', {
+            await axios.post('https://alex-conder-portfolio-api.herokuapp.com/sheets/rows', {
                 ...body,
             })  
             //Função callback opcional
