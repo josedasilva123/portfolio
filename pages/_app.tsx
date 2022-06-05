@@ -8,6 +8,7 @@ import Providers from "../contexts/Providers";
 import {  DefaultFonts, GlobalStyle } from "../styles/globals";
 
 import Colors from "../components/Global/Colors";
+import Footer from "../components/Footer";
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -24,7 +25,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Colors />        
         <GlobalStyle />
         <Header />
-        <Component {...pageProps} />        
+        <Component {...pageProps} />    
+        <Footer />    
       </Providers>       
     </>
   );
