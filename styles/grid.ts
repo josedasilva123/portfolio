@@ -1,5 +1,10 @@
 import styled, { css } from "styled-components";
-import { BaseContainer, BaseFlexRow, BaseCol } from "./components/grid";
+import {
+  BaseContainer,
+  BaseFlexRow,
+  BaseCol,
+  BaseSection,
+} from "./components/grid";
 import { breakpoints } from "./config/breakpoints";
 import { getSizeValue, LargerDefault, SmallerDefault } from "./functions/sizes";
 
@@ -165,4 +170,84 @@ export const Col = styled(BaseCol)`
           }
         `
     )}
+`;
+
+export const Section = styled(BaseSection)`
+  display: block;
+  ${(props) => {
+    switch(props.sectionBackgroundColor){
+      case 'primary':
+        return css`
+          background-color: var(--colorPrimary);
+        `
+      case 'secondary':
+        return css`
+          background-color: var(--colorSecondary);
+        `  
+      case 'white':
+        return css`
+          background-color: var(--colorWhite);
+        `  
+      case 'white':
+        return css`
+          background-color: var(--colorBlack);
+        `      
+      default:
+        return css`
+          background-color: ${props.sectionBackgroundColor};
+        `
+    }
+  }}
+  background-image: ${(props) => props.sectionBackgroundImage};
+  //Caso overlay ativo, o padding será aplicado do overlay
+  ${(props) => {
+    if (props.sectionOverlay) {
+      return css`
+        .overlay {
+          background: ${props.sectionOverlayColor}
+          padding: ${getSizeValue(
+            props.sectionPadding,
+            props.sectionPadding?.xl,
+            LargerDefault
+          )};
+          ${breakpoints.map(
+            (breakpoint) =>
+              css`
+                @media (max-width: ${breakpoint.break}px) {
+                  width: calc(
+                    ${getSizeValue(
+                      props.sectionPadding,
+                      props.sectionPadding?.[breakpoint.name],
+                      breakpoint.reverse ? SmallerDefault : LargerDefault
+                    )}
+                  );
+                }
+              `
+          )}
+        }
+      `;
+    } else {
+      return css`
+        padding: ${getSizeValue(
+          props.sectionPadding,
+          props.sectionPadding?.xl,
+          LargerDefault
+        )};
+        ${breakpoints.map(
+          (breakpoint) =>
+            css`
+              @media (max-width: ${breakpoint.break}px) {
+                width: calc(
+                  ${getSizeValue(
+                    props.sectionPadding,
+                    props.sectionPadding?.[breakpoint.name],
+                    breakpoint.reverse ? SmallerDefault : LargerDefault
+                  )}
+                );
+              }
+            `
+        )}
+      `;
+    }
+  }}
 `;
