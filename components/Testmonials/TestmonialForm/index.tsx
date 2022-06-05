@@ -89,7 +89,7 @@ const TestmonialForm: React.FC<iTestmonialForm> = ({ setTestmonialModal }) => {
               </ThemeTitle>
               <ThemeParagraph paragraphColor="white" paragraphAlign="center">
                 Sua mensagem foi enviada com sucesso! Seu depoimento será
-                avaliado antes de ser aprovado...{" "}
+                avaliado antes de ser aprovado...
               </ThemeParagraph>
 
               <ThemeButton
@@ -108,7 +108,7 @@ const TestmonialForm: React.FC<iTestmonialForm> = ({ setTestmonialModal }) => {
             >
               <FormInput
                 size="md"
-                label="Nome"
+                label="Nome*"
                 name="name"
                 type="text"
                 inputProps={name.inputProps}
@@ -116,7 +116,7 @@ const TestmonialForm: React.FC<iTestmonialForm> = ({ setTestmonialModal }) => {
 
               <FormInput
                 size="md"
-                label="Quem é você?"
+                label="Quem é você?*"
                 placeholder="Ex: cargo - empresa"
                 name="title"
                 type="text"
@@ -125,7 +125,7 @@ const TestmonialForm: React.FC<iTestmonialForm> = ({ setTestmonialModal }) => {
 
               <FormInput
                 size="md"
-                label="Depoimento"
+                label="Depoimento*"
                 name="text"
                 type="textarea"
                 maxLength={300}
