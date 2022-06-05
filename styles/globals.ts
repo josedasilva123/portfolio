@@ -115,3 +115,5 @@ export const GlobalStyle = createGlobalStyle`
     background-size: cover;
   }
 `;
+
+
