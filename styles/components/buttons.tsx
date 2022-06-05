@@ -6,8 +6,8 @@ interface iButton{
     children: React.ReactNode;
     buttonActive?: boolean;
     fullWidth?: boolean;
-    buttonSize: | "xs" | "sm" | "md" | "lg" | "xl";
-    buttonStyle: "solid1" | "solid2" | "solid3" | "outline1" | "outline2" | "outline3";
+    buttonSize: | "xs" | "sm" | "md" | "lg" | "xl" | "round";
+    buttonStyle: "solid1" | "solid2" | "solid3" | "outline1" | "outline2" | "outline3" | "link";
     type?: "submit";
     onClick?: () => void;
 }

@@ -14,7 +14,11 @@ export const ThemeButton = styled(BaseButton)`
   transition: 0.3s;
 
   //Fullwidth
-  ${(props) => props.fullWidth && css`width: 100%;`}
+  ${(props) =>
+    props.fullWidth &&
+    css`
+      width: 100%;
+    `}
 
   //Button sizes
   ${(props) => {
@@ -49,9 +53,12 @@ export const ThemeButton = styled(BaseButton)`
           padding: 0 1.2rem;
           height: 40px;
         `;
+      case "round":
+        return css`
+          font-size: 0.825rem;
+        `;
     }
   }}
-
   //Button styles
   ${(props) => {
     switch (props.buttonStyle) {
@@ -104,11 +111,19 @@ export const ThemeButton = styled(BaseButton)`
             color: var(--colorBlackOutlineButton);
           }
         `;
+      case "link":
+        return css`
+          color: var(--colorWhite);
+
+          &:hover {
+            color: var(--colorPrimary);
+          }
+        `;
     }
   }}
   //Hover (Solid)
   ${(props) => {
-    if (props.buttonStyle.includes("solid")) {
+    if (props.buttonStyle.includes("solid") && !props.disabled) {
       return css`
         &:hover {
           filter: brightness(1.05);
@@ -116,7 +131,36 @@ export const ThemeButton = styled(BaseButton)`
       `;
     }
   }}
-   //Active (Solid)
+  //Hover (Outline)
+  ${(props) => {
+    if (!props.disabled) {
+      switch (props.buttonStyle) {
+        case "outline1":
+          return css`
+            &:hover {
+              background: var(--colorWhiteOutlineButton);
+              color: var(--colorBlackOutlineButton);
+            }
+          `;
+        case "outline2":
+          return css`
+            &:hover {
+              background: var(--colorPrimaryButton);
+              color: var(--colorBlackOutlineButton);
+            }
+          `;
+        case "outline3":
+          return css`
+            &:hover {
+              background: var(--colorSecondaryButton);
+              color: var(--colorBlackOutlineButton);
+            }
+          `;
+      }
+    }
+  }}
+
+  //Active (Solid)
    ${(props) => {
     if (props.buttonActive) {
       return css`
@@ -146,6 +190,16 @@ export const ThemeButton = styled(BaseButton)`
             color: var(--colorBlackOutlineButton);
           `;
       }
+    }
+  }}
+
+  //Disabled (All)
+  ${(props) => {
+    if (props.disabled) {
+      return css`
+        cursor: not-allowed;
+        opacity: 0.7;
+      `;
     }
   }}
 `;
