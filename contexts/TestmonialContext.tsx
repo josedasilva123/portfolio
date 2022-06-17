@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useState, createContext } from "react";
+import { api } from "../data/api/axios";
 
 //Interfaces
 export interface iTestmonial{
@@ -46,12 +46,10 @@ type tSendTestmonial = (
 export const TestmonialStorage: React.FC<iTestmonialStorage> = ({children}) => {
     const [testmonials, setTestmonials] = useState<iTestmonial[] | []>([]);
 
-    const sendTestmonial: tSendTestmonial = async(body, options) =>{
+    const sendTestmonial: tSendTestmonial = async (body, options) =>{
         try {
             options.setLoading?.(true);
-            await axios.post('https://alex-conder-portfolio-api.herokuapp.com/sheets/rows', {
-                ...body,
-            })  
+            await api.post('sheets/rows', body)  
             //Função callback opcional
             options.callback?.();
         } catch (error) {
