@@ -1,57 +1,77 @@
-import axios from "axios";
 import React, { useState } from "react";
+import { api } from "../../../data/api/axios";
 
-import validateInput from "../../../hooks/form/validateInput";
+import { useAlert } from "../../../hooks/useAlert";
 
 import { ThemeButton } from "../../../styles/buttons";
-import { Form, FormInput } from "../../../styles/form";
+import { Alert, Form, FormInput } from "../../../styles/form";
 import { FlexRow } from "../../../styles/grid";
 
-const ContactForm = () => {
-  const [loading, setLoading] = useState(false);  
+import { useInput, useForm } from "lx-react-form";
 
-  const name = validateInput({
+const ContactForm = () => {
+  const [loading, setLoading] = useState(false);
+
+  const name = useInput({
     name: "name",
   });
 
-  const email = validateInput({
+  const email = useInput({
     name: "email",
-    type: "email",
+    validation: "email",
   });
 
-  const whatsapp = validateInput({
+  const whatsapp = useInput({
     name: "whatsapp",
     mask: "telefone",
-    type: "telefone",
+    validation: "telefone",
   });
 
-  const message = validateInput({
+  const message = useInput({
     name: "message",
   });
 
-  async function onSubmit(formData: any){
-      try {
-          setLoading(true);
-          const data = {
-              emailTo: "alex.v.conder@nerdweb.com.br",
-              name: formData.name,
-              whatsapp: formData.whatsapp,
-              message: formData.message,
-          }
-          const response = await axios.post('https://git.heroku.com/alex-conder-portfolio-api.git/email/send', data);
-          console.log(response);
-      } catch (error) {
-          console.log(error);
-      } finally {
-          setLoading(false);
-      }
+  const form = useForm({
+    clearFields: true,
+    formFields: [name, email, whatsapp, message],
+    submitCallback: onSubmit,
+  })
+
+  const formAlert = useAlert();
+
+  async function onSubmit(formData: any) {
+    try {
+      setLoading(true);
+      const data = {
+        emailTo: "alex.conder@nerdweb.com.br",
+        name: formData.name,
+        whatsapp: formData.whatsapp,
+        message: formData.message,
+      };
+
+      const response = await api.post("email/send", data);
+
+      formAlert.activeAlert({
+        duration: 3000,
+        type: 'sucess',
+        text: 'Sua mensagem foi enviada com sucesso!'
+      })
+
+    } catch (error) {
+      formAlert.activeAlert({
+        duration: 3000,
+        type: 'error',
+        text: 'Ops, parece que um erro aconteceu! :c'
+      })
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
     <Form
       gap="1rem"
-      formFields={[name, email, whatsapp, message]}
-      submitCallback={onSubmit}
+      handleSubmit={form.handleSubmit}
     >
       <FormInput
         size="md"
@@ -59,14 +79,18 @@ const ContactForm = () => {
         name="name"
         type="text"
         inputProps={name.inputProps}
+        error={name.error}
       />
+
       <FormInput
         size="md"
         label="E-mail*"
         name="email"
         type="email"
         inputProps={email.inputProps}
+        error={email.error}
       />
+
       <FormInput
         size="md"
         label="Whatsapp*"
@@ -74,20 +98,30 @@ const ContactForm = () => {
         type="text"
         maxLength={15}
         inputProps={whatsapp.inputProps}
+        error={whatsapp.error}
       />
+
       <FormInput
         size="md"
         label="Mensagem*"
         name="message"
         type="textarea"
         inputProps={message.inputProps}
+        error={message.error}
       />
+
+      {formAlert.active && (
+        <Alert alertType={formAlert.alertType} alertDuration={3000} fullWidth={true}>
+          {formAlert.alertText}
+        </Alert>
+      )}
+
       <FlexRow
         justifyContent={{ lg: "flex-end", sm: "unset" }}
         flexDirection={{ lg: "row", sm: "column" }}
       >
         <ThemeButton buttonSize="md" buttonStyle="solid1" disabled={loading}>
-          {loading ? 'Enviando...' : 'Enviar'}
+          {loading ? "Enviando..." : "Enviar"}
         </ThemeButton>
       </FlexRow>
     </Form>
