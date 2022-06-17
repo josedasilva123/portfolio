@@ -10,6 +10,7 @@ import NavMenu from "../NavMenu";
 
 import { useClickOutisde } from "../../../hooks/useOutsideClick";
 import DarkModeButton from "../DarkModeButton";
+import Link from "next/link";
 
 const MobileHeader: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -28,9 +29,13 @@ const MobileHeader: React.FC = () => {
               <button onClick={() => setOpen(!open)}>
                 {open ? <MdClose size={26} /> : <MdMenu size={26} />}
               </button>
-              <ThemeButton buttonSize="xs" buttonStyle="solid1">
-                <MdPhone size={21} />
-              </ThemeButton>
+
+              <Link href="#contato">
+                <ThemeButton buttonSize="xs" buttonStyle="solid1">
+                  <MdPhone size={21} />
+                </ThemeButton>
+              </Link>
+              
               <DarkModeButton />
             </FlexRow>
           </Col>
