@@ -9,13 +9,14 @@ import {
   ThemeTitle,
 } from "../../styles/typography";
 import { TechMenu } from "../Techs/styles";
+import Kenzie from "./Kenzie";
 import Nerdweb from "./Nerdweb";
 import Personal from "./Personal";
 
 const Projects: React.FC<iGithubRepoProps> = ({ repo, error }) => {
   const [currentTab, setCurrentTag] = useState("nerdweb");
   return (
-    <section>
+    <section id="projetos">
       <Container
         containerPadding="sm"
         paddingTop={{ xl: "4rem", lg: "3rem", md: "2rem" }}
@@ -65,6 +66,18 @@ const Projects: React.FC<iGithubRepoProps> = ({ repo, error }) => {
               buttonSize="sm"
               buttonStyle="outline2"
               buttonActive={
+                currentTab.toLowerCase() === "kenzie" ? true : false
+              }
+              onClick={() => setCurrentTag("kenzie")}
+            >
+              Kenzie Academy
+            </ThemeButton>
+          </li>
+          <li>
+            <ThemeButton
+              buttonSize="sm"
+              buttonStyle="outline2"
+              buttonActive={
                 currentTab.toLowerCase() === "pessoais" ? true : false
               }
               onClick={() => setCurrentTag("pessoais")}
@@ -74,7 +87,8 @@ const Projects: React.FC<iGithubRepoProps> = ({ repo, error }) => {
           </li>
         </TechMenu>
         {currentTab === "nerdweb" && <Nerdweb />}
-        {currentTab === "pessoais" && <Personal repo={repo} error={error} />}
+        {currentTab === "kenzie" && <Kenzie />}
+        {currentTab === "pessoais" && <Personal repo={repo} error={error} />}        
       </Container>
     </section>
   );
