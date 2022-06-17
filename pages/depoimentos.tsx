@@ -1,17 +1,32 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { NextPage } from 'next'
-import React, {useContext} from 'react'
+import Head from 'next/head';
+import React, {useContext, useEffect} from 'react'
+import TestmonialFeed from '../components/Testmonials/TestmonialFeed';
+import { iTestmonial, TestmonialContext } from '../contexts/TestmonialContext';
 
 interface iDepoimentos {
-    testmonials: any[];
-  }
+    testmonials: iTestmonial[] | [];
+}
 
 const Depoimentos: NextPage<iDepoimentos> = ({testmonials}) => {
+  const {setTestmonials} = useContext(TestmonialContext);
+  
+  useEffect(() => {
+    setTestmonials(testmonials);
+  }, [])
+
   return (
-    <div>depoimentos</div>
+    <>
+      <Head>
+        <title>Alex Conder - Portfólio - Depoimentos</title>
+      </Head>
+       <TestmonialFeed />
+    </>
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     try { 
       //Fetch Testmonials
       const resTest = await fetch(
@@ -19,10 +34,11 @@ export async function getStaticProps() {
       )
   
       const dataTest = await resTest.json();
+      const filteredData = dataTest.filter((testmonial: any) => testmonial.approved === "yes");
   
-      return { props: { testmonials: dataTest } };
+      return { props: { testmonials: filteredData } };
     } catch (error) {
-      
+      console.log(error);
     }
   }
 
