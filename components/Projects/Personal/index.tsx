@@ -104,7 +104,7 @@ const Personal: React.FC<iGithubRepoProps> = ({ repo, error }) => {
               >
                 {r.name}
               </ThemeTitle>
-              <a href={r.url} target="_blank">
+              <a href={r.html_url} target="_blank">
                 <ThemeButton buttonStyle="outline2" buttonSize="md">
                   <MdLink size={24} />
                   Acessar projeto

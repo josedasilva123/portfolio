@@ -42,7 +42,7 @@ const Techs: React.FC = () => {
 
         <ThemeTextBox gap="1rem" textBoxMargin={{ top: "1rem" }}>
           <ThemeParagraph paragraphColor="white">
-            Minha jornada profissional me moldou um profissional muito versatil,
+            Minha jornada me moldou um profissional muito versatil,
             tenho conhecimentos nas áreas de Marketing, UI/UX, Programação e
             Ensino.
           </ThemeParagraph>
