@@ -14,6 +14,7 @@ import { MdSend } from "react-icons/md";
 
 import TestmonialCard from "./TestmonialCard";
 import TestmonialForm from "./TestmonialForm";
+import Link from "next/link";
 
 const Testmonials = () => {
   const { testmonials } = useContext(TestmonialContext);
@@ -34,7 +35,7 @@ const Testmonials = () => {
   return (
     <>
       {/* Bloco de depoimentos */}
-      <section>
+      <section id="depoimentos">
         <Container
           containerPadding="sm"
           paddingTop={{ default: "4rem" }}
@@ -83,7 +84,9 @@ const Testmonials = () => {
             )}
 
             <FlexRow
-              justifyContent={{ default: "center" }}
+              gap={{ default: "1rem"}}
+              flexDirection={{ lg: 'row', sm: 'column'}}
+              justifyContent={{ lg: "center", sm: 'unset' }}
               rowMargin={{ top: "2rem" }}
             >
               <ThemeButton
@@ -93,6 +96,15 @@ const Testmonials = () => {
               >
                 <MdSend size={24} /> Enviar depoimento
               </ThemeButton>
+              <Link href="/depoimentos">
+              <ThemeButton
+                buttonStyle="outline1"
+                buttonSize="lg"
+              >
+                Ver todos os depoimentos
+              </ThemeButton>
+              </Link>
+              
             </FlexRow>
           </FlexRow>
         </Container>
