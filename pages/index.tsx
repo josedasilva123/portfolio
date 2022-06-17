@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import type { NextPage } from "next";
+import Head from "next/head";
 import { useContext, useEffect } from "react";
 
 import AboutMe from "../components/AboutMe";
@@ -27,6 +28,9 @@ const Home: NextPage<iHome> = ({ repositories, repoError, testmonials }) => {
 
   return (
     <>
+      <Head>
+        <title>Alex Conder - Portfólio - Home</title>
+      </Head>
       <MainBanner />
       <AboutMe />
       <Techs />
@@ -37,7 +41,7 @@ const Home: NextPage<iHome> = ({ repositories, repoError, testmonials }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     //Fetch Github Repos
     const repoRes = await fetch(
