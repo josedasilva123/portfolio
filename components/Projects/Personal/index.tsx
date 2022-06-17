@@ -43,6 +43,13 @@ const Personal: React.FC<iGithubRepoProps> = ({ repo, error }) => {
               paddingLeft="2rem"
             >
               <li>
+                <b>LX React Form:</b> uma bibleoteca de formulários para React
+                baseada em hooks, contendo diversas features, como validações de
+                campos (input, checkbox, radio, number, grupos de checkbox e
+                muito mais), mascarás, formulário de etapa e mais.
+              </li>
+
+              <li>
                 <b>BasicV2:</b> um framework simples e limpo de estilização para
                 agilizar o desenvolvimento de sites em HTML/CSS/JS contendo uma
                 diversidade de funcionalidades dividas em módulos, como:
@@ -84,7 +91,7 @@ const Personal: React.FC<iGithubRepoProps> = ({ repo, error }) => {
         rowTag="ul"
       >
         {repo?.map((r, index) => (
-          <Col key={index} size={{ lg: "(100% - 4rem)/3", md: "100%" }}>
+          <Col key={index} size={{ lg: "(100% - 2rem)/2", md: "100%" }}>
             <ThemeCard padding={{ all: "2rem" }}>
               <ThemeTag tagType="solid" tagColor="primary">
                 {r.language}
