@@ -9,6 +9,7 @@ export const TechMenu = styled.ul`
 
   margin-top: 2rem;
   padding-bottom: 2rem; 
+  padding-right: .5rem;
 
   li{
       white-space: nowrap;
