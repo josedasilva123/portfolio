@@ -1,17 +1,12 @@
 import { iProject } from "../interfaces/global"
 
-export const gitHubProjects = ['basicv2', 'portfolio', 'pokedux'];
+export const gitHubProjects = ['basicv2', 'portfolio', 'pokedux', 'lx-react-form'];
 
 export const nerdwebProjects: iProject[] = [
     {
       name: 'Caldo Bom: Notas do Mundo',
       areas: ['UI', 'Front-end'],
       link: 'https://caldobom.com.br/notas-do-mundo/',
-    },
-    {
-      name: 'Caldo Bom: Junina',
-      areas: ['UI', 'Front-end'],
-      link: 'https://caldobom.com.br/festa-junina/',
     },
     {
       name: 'Positivo: Do seu jeito',
