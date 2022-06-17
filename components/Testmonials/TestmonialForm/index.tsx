@@ -4,13 +4,12 @@ import React, { useContext, useState, useEffect, Dispatch } from "react";
 
 import { TestmonialContext } from "../../../contexts/TestmonialContext";
 
-import validateInput from "../../../hooks/form/validateInput";
-
 import { ThemeButton } from "../../../styles/buttons";
 import { Form, FormInput } from "../../../styles/form";
 import { FlexRow } from "../../../styles/grid";
 import { ThemeParagraph, ThemeTitle } from "../../../styles/typography";
 import LoadingScreen from "./LoadingScreen";
+import { useInput, useForm } from "lx-react-form"
 
 interface iTestmonialForm {
   setTestmonialModal: Dispatch<React.SetStateAction<boolean>>;
@@ -36,15 +35,23 @@ const TestmonialForm: React.FC<iTestmonialForm> = ({ setTestmonialModal }) => {
     });
   }
 
-  const name = validateInput({
+  const name = useInput({
     name: "name",
   });
-  const title = validateInput({
+
+  const title = useInput({
     name: "title",
   });
-  const text = validateInput({
+
+  const text = useInput({
     name: "text",
   });
+
+  const form = useForm({
+    clearFields: true,
+    formFields: [name, title, text],
+    submitCallback: formSubmit
+  })
 
   //Limpar os campos na desmontagem
   useEffect(() => {
@@ -103,8 +110,7 @@ const TestmonialForm: React.FC<iTestmonialForm> = ({ setTestmonialModal }) => {
           ) : (
             <Form
               gap="1rem"
-              formFields={[name, text, title]}
-              submitCallback={formSubmit}
+              handleSubmit={form.handleSubmit}
             >
               <FormInput
                 size="md"
@@ -112,6 +118,7 @@ const TestmonialForm: React.FC<iTestmonialForm> = ({ setTestmonialModal }) => {
                 name="name"
                 type="text"
                 inputProps={name.inputProps}
+                error={name.error}
               />
 
               <FormInput
@@ -121,6 +128,7 @@ const TestmonialForm: React.FC<iTestmonialForm> = ({ setTestmonialModal }) => {
                 name="title"
                 type="text"
                 inputProps={title.inputProps}
+                error={title.error}
               />
 
               <FormInput
@@ -132,6 +140,7 @@ const TestmonialForm: React.FC<iTestmonialForm> = ({ setTestmonialModal }) => {
                 textAreaHeight={100}
                 textAreaMaxHeight={100}
                 inputProps={text.inputProps}
+                error={text.error}
               />
 
               <ThemeButton
