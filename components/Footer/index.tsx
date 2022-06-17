@@ -1,8 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 
-import validateInput from "../../hooks/form/validateInput";
-
 import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
 
 import { ThemeButton } from "../../styles/buttons";
@@ -17,7 +15,7 @@ import ContactForm from "./ContactForm";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id="contato">
       <Section alternativeTag="div" sectionBackgroundColor="var(--colorDarkPrimary)">
         <Container
           containerPadding="sm"

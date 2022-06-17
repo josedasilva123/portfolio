@@ -10,7 +10,7 @@ import {
 
 const AboutMe: React.FC = () => {
   return (
-    <section>
+    <section id="sobre">
       <Container
         containerPadding="sm"
         paddingTop={{ xl: "4rem", lg: "3rem", md: "2rem" }}

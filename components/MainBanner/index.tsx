@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { ThemeButton } from "../../styles/buttons";
 import { Col, Container, FlexRow } from "../../styles/grid";
@@ -18,7 +19,7 @@ const MainBanner: React.FC = () => {
         paddingBottom={{ xl: "5rem", lg: "4rem", md: "2rem" }}
       >
         <FlexRow
-          gap={{ default: '2rem'}}
+          gap={{ default: "2rem" }}
           alignItems={{ default: "center" }}
           justifyContent={{ default: "space-between" }}
           flexDirection={{ sm: "column", md: "row" }}
@@ -56,17 +57,21 @@ const MainBanner: React.FC = () => {
               </ThemeParagraph>
 
               <FlexRow
-                gap={{ default: '.6rem'}}
+                gap={{ default: ".6rem" }}
                 flexDirection={{ sm: "column", md: "row" }}
                 alignItems={{ sm: "center", md: "flex-start" }}
               >
-                <ThemeButton buttonStyle="solid1" buttonSize="md">
-                  Contratar agora
-                </ThemeButton>
+                <Link href="#contato">
+                  <ThemeButton buttonStyle="solid1" buttonSize="md">
+                    Contratar agora
+                  </ThemeButton>
+                </Link>
 
-                <ThemeButton buttonStyle="outline1" buttonSize="md">
-                  Saiba mais
-                </ThemeButton>
+                <Link href="#sobre">
+                  <ThemeButton buttonStyle="outline1" buttonSize="md">
+                    Saiba mais
+                  </ThemeButton>
+                </Link>
               </FlexRow>
             </FlexRow>
           </Col>
