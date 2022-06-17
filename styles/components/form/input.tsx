@@ -2,10 +2,10 @@ import React, { ChangeEventHandler } from "react";
 
 interface iInputProps {
   value?: string | number;
+  name?: string;
   onChange: (event: any) => void;
   onKeyUp: () => void;
-  onBlur: () => boolean;
-  error?: string | null;
+  onBlur: () => void;
 }
 
 interface iInput {
@@ -13,12 +13,13 @@ interface iInput {
   label?: string;
   placeholder?: string;
   type?: "text" | "email" | "number" | "textarea";
-  size: "sm" | "md" | "lg";
+  size: "sm" | "md" | "lg";  
   name: string;
   maxLength?: number;
   textAreaHeight?: number;
   textAreaMaxHeight?: number;
   inputProps: iInputProps;
+  error: string | null;
 }
 
 const BaseInput: React.FC<iInput> = ({
@@ -29,6 +30,7 @@ const BaseInput: React.FC<iInput> = ({
   maxLength,
   placeholder,
   inputProps,
+  error,
 }) => {
   return (
     <div className={className}>
@@ -51,7 +53,7 @@ const BaseInput: React.FC<iInput> = ({
           {...inputProps}
         />
       )}
-      {inputProps.error && <p className="error">{inputProps.error}</p>}
+      {error && <p className="error">{error}</p>}
     </div>
   );
 };

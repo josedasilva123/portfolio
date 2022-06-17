@@ -70,8 +70,16 @@ export const ThemeTitle = styled(BaseTitle)`
                 `                    
         }
     }}
+    
     //Cores de título
     ${(props) => fontColor(props.titleColor)}
+    a{
+        ${(props) => fontColor(props.titleColor)}
+        transition: .3s;
+        &:hover{
+            text-decoration: underline;
+        }   
+    }
 `
 
 export const ThemeLabel = styled(BaseLabel)`

@@ -26,6 +26,14 @@ export const DefaultColors = createGlobalStyle`
      --colorInputBackground: #1F3136;
      --colorInputBorder: #8FC9ED;
 
+     //Alert Colors:
+     --colorErrorBackground: #F3AFA8;
+     --colorErrorSolid: #F46E5F;
+     --colorAlertBackground: #F3F1A5;
+     --colorAlertSolid: #73702C;
+     --colorSucessBackground: #90FCC6;
+     --colorSucessSolid: #477D62;
+
     //Custom
     --colorWhiteOpacity60: rgba(255,255,255, .6);
     --colorPrimaryOpacity20: #8FC9ED3F;  
@@ -58,6 +66,14 @@ export const LightThemeColors = createGlobalStyle`
     --colorInputBackground: #D7F0F7;
     --colorInputBorder: #285C7D;
 
+    //Alert Colors:
+    --colorErrorBackground: #F46E5F;
+     --colorErrorSolid: #F3AFA8;
+     --colorAlertBackground: #73702C;
+     --colorAlertSolid: #F3F1A5;
+     --colorSucessBackground: #477D62;
+     --colorSucessSolid: #90FCC6;
+
     //Custom
     --colorWhiteOpacity60: rgba(9,9,9, .6);
     --colorPrimaryOpacity20: #559DCA3F; 
@@ -71,6 +87,9 @@ export const DefaultFonts = createGlobalStyle`
     --PrimaryFont: 'Roboto Mono', monospace;
     --SecondaryFont: 'Roboto', sans-serif;
   } 
+  a{
+    color: unset;
+  }
   h1, h2, h3, h4, h5, h6{
     font-family: var(--PrimaryFont);
   }
