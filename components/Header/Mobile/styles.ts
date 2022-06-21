@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMobileHeader = styled.header`
+  z-index: 1001;  
   padding: 0.4rem 0;
   position: relative;
 

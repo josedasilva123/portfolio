@@ -12,6 +12,7 @@ import Testmonials from "../components/Testmonials";
 import { TestmonialContext } from "../contexts/TestmonialContext";
 
 import { gitHubProjects } from "../data/project";
+import { ScrollBehavior } from "../styles/globals";
 
 interface iHome {
   repositories?: any[];
@@ -31,6 +32,7 @@ const Home: NextPage<iHome> = ({ repositories, repoError, testmonials }) => {
       <Head>
         <title>Alex Conder - Portfólio - Home</title>
       </Head>
+      <ScrollBehavior />
       <MainBanner />
       <AboutMe />
       <Techs />

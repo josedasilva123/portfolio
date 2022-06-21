@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
+    z-index: 1001;
     padding: .6rem 0;
 
     h1{

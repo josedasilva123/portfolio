@@ -135,4 +135,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-
+export const ScrollBehavior = createGlobalStyle`
+  *{
+    scroll-behavior: smooth;
+  }
+`
