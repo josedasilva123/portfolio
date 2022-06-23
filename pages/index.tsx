@@ -62,7 +62,7 @@ export async function getServerSideProps() {
 
     const dataTest = await  resTest.json();
 
-    return { props: { repositories: filteredData, testmonials: dataTest } };
+    return { props: { repositories: filteredData, testmonials: dataTest.reverse() } };
   } catch (error) {
     return { props: { repoError: "Não foi possível carregar o repositório" } };
   }

@@ -36,7 +36,7 @@ export async function getServerSideProps() {
       const dataTest = await resTest.json();
       const filteredData = dataTest.filter((testmonial: any) => testmonial.approved === "yes");
   
-      return { props: { testmonials: filteredData } };
+      return { props: { testmonials: filteredData.reverse() } };
     } catch (error) {
       console.log(error);
     }
