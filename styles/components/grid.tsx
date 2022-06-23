@@ -20,6 +20,7 @@ interface iFlexRow {
   justifyContent?: tSizeList;
   flexDirection?: tSizeList;
   flexWrap?: tSizeList;
+  height?: string;
   rowTag?: "ul" | "ol";
   rowPadding?: tSizeList;
 }

@@ -85,6 +85,8 @@ export const FlexRow = styled(BaseFlexRow)`
   display: flex;
   gap: ${(props) => getSizeValue(props.gap, props.gap?.xl, LargerDefault)};
 
+  height: ${(props) => props.height};
+
   align-items: ${(props) =>
     getSizeValue(props.alignItems, props.alignItems?.xl, LargerDefault)};
   justify-content: ${(props) =>

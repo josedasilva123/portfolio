@@ -85,8 +85,8 @@ export const ThemeTitle = styled(BaseTitle)`
 export const ThemeLabel = styled(BaseLabel)`
     display: block;
     
-    font-size: 16px;
-    font-weight: 600; 
+    font-size: ${(props) => props.labelSize ? props.labelSize : 16}px;
+    font-weight: 500; 
     letter-spacing: .2em;
 
     text-align: ${(props) => props.labelAlign};

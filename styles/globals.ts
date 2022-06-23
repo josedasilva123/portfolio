@@ -38,6 +38,7 @@ export const DefaultColors = createGlobalStyle`
     --colorWhiteOpacity60: rgba(255,255,255, .6);
     --colorPrimaryOpacity20: #8FC9ED3F;  
     --colorDarkPrimary: #131E1D; 
+    --colorDarkSecondary: #16162e;
   }  
 `;
 
@@ -46,7 +47,7 @@ export const LightThemeColors = createGlobalStyle`
     //Main
     --colorBlack: #FFFFFF;
     --colorWhite: #090909;    
-    --colorPrimary: #285C7D;
+    --colorPrimary: #1d96e3;
     --colorSecondary: #3B4D4A;
 
     //Button
@@ -54,7 +55,7 @@ export const LightThemeColors = createGlobalStyle`
     --colorWhiteSolidButton: #FFFFFF; 
     --colorBlackOutlineButton: #FFFFFF;
     --colorWhiteOutlineButton: #090909; 
-    --colorPrimaryButton: #285C7D;
+    --colorPrimaryButton: #0d7bc2;
     --colorSecondaryButton: #3B4D4A;  
 
     //Card
@@ -78,6 +79,7 @@ export const LightThemeColors = createGlobalStyle`
     --colorWhiteOpacity60: rgba(9,9,9, .6);
     --colorPrimaryOpacity20: #559DCA3F; 
     --colorDarkPrimary: #E8FBFA;
+    --colorDarkSecondary: #FFF;
   }  
 `
 
@@ -130,7 +132,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   //Seus estilos
   body {
-    background: linear-gradient(var(--colorBlack), var(--colorDarkPrimary)) no-repeat;
+    background: linear-gradient(var(--colorDarkSecondary), var(--colorDarkPrimary)) no-repeat;
     background-size: cover;
   }
 `;

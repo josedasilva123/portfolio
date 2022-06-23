@@ -14,6 +14,7 @@ interface iTitle{
 interface iLabel{
     className?: string;
     children: React.ReactNode; 
+    labelSize?: number;
     labelAlign?: 'left' | 'center' | 'right'; 
     labelMargin?: iMargin;
     labelColor?: 'white' | 'primary' | 'secondary'; 
