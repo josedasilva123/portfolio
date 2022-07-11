@@ -3,6 +3,8 @@ import { BaseCard, BasePercentBar, BaseTag } from "./components/visual";
 import { backgroundColor } from "./functions/visual";
 
 export const ThemeCard = styled(BaseCard)`
+  width: 100%;
+
   display: flex;
   align-items: flex-start;
   flex-direction: column;

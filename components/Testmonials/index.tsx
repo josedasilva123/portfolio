@@ -14,6 +14,7 @@ import { MdSend } from "react-icons/md";
 
 import TestmonialCard from "./TestmonialCard";
 import TestmonialForm from "./TestmonialForm";
+
 import Link from "next/link";
 
 const Testmonials = () => {
@@ -46,12 +47,13 @@ const Testmonials = () => {
             titleSize="title1"
             titleColor="white"
             titleAlign="center"
+            tabIndex={0}
           >
             Depoimentos
           </ThemeTitle>
 
           <ThemeTitle
-            titleTag="h3"
+            titleTag="p"
             titleSize="subtitle"
             titleColor="primary"
             titleAlign="center"
@@ -64,8 +66,8 @@ const Testmonials = () => {
             {testShortList.length > 0 ? (
               <>
                 {testShortList.map((testmonial, index) => (
-                  <Col key={index} size={{ lg: "(100% - 4rem)/3", md: "100%" }}>
-                    <TestmonialCard testmonial={testmonial} />
+                  <Col key={index} size={{ lg: "(100% - 4rem)/3", md: "100%" }}>                  
+                      <TestmonialCard testmonial={testmonial} />
                   </Col>
                 ))}
               </>
@@ -84,9 +86,9 @@ const Testmonials = () => {
             )}
 
             <FlexRow
-              gap={{ default: "1rem"}}
-              flexDirection={{ lg: 'row', sm: 'column'}}
-              justifyContent={{ lg: "center", sm: 'unset' }}
+              gap={{ default: "1rem" }}
+              flexDirection={{ lg: "row", sm: "column" }}
+              justifyContent={{ lg: "center", sm: "unset" }}
               rowMargin={{ top: "2rem" }}
             >
               <ThemeButton
@@ -97,14 +99,10 @@ const Testmonials = () => {
                 <MdSend size={24} /> Enviar depoimento
               </ThemeButton>
               <Link href="/depoimentos">
-              <ThemeButton
-                buttonStyle="outline1"
-                buttonSize="lg"
-              >
-                Ver todos os depoimentos
-              </ThemeButton>
+                <ThemeButton buttonStyle="outline1" buttonSize="lg">
+                  Ver todos os depoimentos
+                </ThemeButton>
               </Link>
-              
             </FlexRow>
           </FlexRow>
         </Container>
@@ -119,7 +117,7 @@ const Testmonials = () => {
         modalScroll={true}
         modalMaxHeight="100vh"
       >
-        <TestmonialForm setTestmonialModal={setTestmonialModal}/>
+        <TestmonialForm setTestmonialModal={setTestmonialModal} />
       </ThemeModal>
     </>
   );

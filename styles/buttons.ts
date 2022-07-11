@@ -13,6 +13,8 @@ export const ThemeButton = styled(BaseButton)`
 
   transition: 0.3s;
 
+  white-space: nowrap;
+
   //Fullwidth
   ${(props) =>
     props.fullWidth &&

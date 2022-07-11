@@ -16,10 +16,10 @@ const Nerdweb = () => {
         flexDirection={{ lg: "row", md: "column" }}
       >
         <Col size={{ lg: "40%", md: "100%" }}>
-          <ThemeTitle titleTag="h3" titleSize="title2" titleColor="white">
+          <ThemeTitle titleTag="h3" titleSize="title2" titleColor="white" tabIndex={0}>
             Nerdweb
           </ThemeTitle>
-          <ThemeTitle titleTag="h4" titleSize="subtitle" titleColor="primary">
+          <ThemeTitle titleTag="p" titleSize="subtitle" titleColor="primary">
             Aprendizado em diversos segmentos
           </ThemeTitle>
         </Col>

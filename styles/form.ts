@@ -49,13 +49,6 @@ export const FormInput = styled(BaseInput)`
     color: var(--colorInputText);
 
     border-radius: var(--InputRadius);
-
-    &:focus,
-    &:active {
-      outline-color: var(--colorWhite);
-      outline-style: double;
-      filter: brightness(1.1);
-    }
   }
 
   input {
@@ -98,13 +91,6 @@ export const FormInput = styled(BaseInput)`
           `;
       }
     }}
-
-    &:focus,
-    &:active {
-      outline-color: var(--colorWhite);
-      outline-style: double;
-      filter: brightness(1.1);
-    }
   }
 
   .error {

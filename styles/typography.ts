@@ -3,6 +3,7 @@ import { BaseTitle, BaseLabel, BaseParagraph, BaseTextBox, BaseList } from "./co
 import { fontColor } from "./functions/typography";
 
 export const ThemeTitle = styled(BaseTitle)`
+    font-family: var(--PrimaryFont);
     line-height: 1.3;
 
     text-align: ${(props) => props.titleAlign};

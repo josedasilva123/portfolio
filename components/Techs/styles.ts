@@ -8,8 +8,7 @@ export const TechMenu = styled.ul`
   overflow-x: scroll;
 
   margin-top: 2rem;
-  padding-bottom: 2rem; 
-  padding-right: .5rem;
+  padding: .6rem .6rem 2rem .6rem;
 
   li{
       white-space: nowrap;

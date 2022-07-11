@@ -13,10 +13,15 @@ import {
 
 import ContactForm from "./ContactForm";
 
+import { motion } from "framer-motion";
+
 const Footer = () => {
   return (
     <footer id="contato">
-      <Section alternativeTag="div" sectionBackgroundColor="var(--colorDarkPrimary)">
+      <Section
+        alternativeTag="div"
+        sectionBackgroundColor="var(--colorDarkPrimary)"
+      >
         <Container
           containerPadding="sm"
           paddingTop={{ lg: "4rem", md: "3rem" }}
@@ -27,39 +32,60 @@ const Footer = () => {
             flexDirection={{ lg: "row", sm: "column" }}
           >
             <Col size={{ default: "100%" }}>
-              <ThemeLabel labelColor="primary">Contato profissional</ThemeLabel>
-
-              <ThemeTitle titleTag="h2" titleSize="headline" titleColor="white">
-                Fale comigo
-              </ThemeTitle>
-
-              <ThemeParagraph
-                paragraphColor="white"
-                paragraphMargin={{ top: "1rem" }}
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
               >
-                Preencha o formulário ou escolha uma das opções disponíveis
-                abaixo:
-              </ThemeParagraph>
+                <ThemeLabel labelColor="primary">
+                  Contato profissional
+                </ThemeLabel>
 
-              <FlexRow gap={{ default: "1rem" }} rowMargin={{ top: "4rem" }}>
-                <a
-                  href="https://www.linkedin.com/in/alex-conder-b015a71a4/"
-                  target="_blank"
+                <ThemeTitle
+                  titleTag="h2"
+                  titleSize="headline"
+                  titleColor="white"
+                  tabIndex={0}
                 >
-                  <ThemeButton buttonSize="round" buttonStyle="link">
-                    <FaLinkedin size={24} />
-                  </ThemeButton>
-                </a>
+                  Fale comigo
+                </ThemeTitle>
 
-                <a href="https://wa.me/5541991861989" target="_blank">
-                  <ThemeButton buttonSize="round" buttonStyle="link">
-                    <FaWhatsapp size={24} />
-                  </ThemeButton>
-                </a>
-              </FlexRow>
+                <ThemeParagraph
+                  paragraphColor="white"
+                  paragraphMargin={{ top: "1rem" }}
+                >
+                  Preencha o formulário ou escolha uma das opções disponíveis
+                  abaixo:
+                </ThemeParagraph>
+
+                <FlexRow gap={{ default: "1rem" }} rowMargin={{ top: "4rem" }}>
+                  <a
+                    href="https://www.linkedin.com/in/alex-conder-b015a71a4/"
+                    target="_blank"
+                  >
+                    <ThemeButton buttonSize="round" buttonStyle="link">
+                      <FaLinkedin size={24} />
+                    </ThemeButton>
+                  </a>
+
+                  <a href="https://wa.me/5541991861989" target="_blank">
+                    <ThemeButton buttonSize="round" buttonStyle="link">
+                      <FaWhatsapp size={24} />
+                    </ThemeButton>
+                  </a>
+                </FlexRow>
+              </motion.div>
             </Col>
             <Col size={{ default: "100%" }}>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
               <ContactForm />
+              </motion.div>
             </Col>
           </FlexRow>
         </Container>

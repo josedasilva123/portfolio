@@ -1,5 +1,6 @@
 import React from 'react'
 import { iPadding } from '../../interfaces/global';
+import { motion } from "framer-motion";
 
 interface iPercentBar{
     className?: string; 
@@ -21,10 +22,16 @@ interface iTag{
   tagColor: string;
 }
 
-export const BasePercentBar: React.FC<iPercentBar> = ({className}) => {
+export const BasePercentBar: React.FC<iPercentBar> = ({className, percentValue}) => {
   return (
     <div className={className}>
-        <span></span>    
+        <motion.span
+          initial={{ width: "1%" }}
+          whileInView={{ width: `${percentValue}%` }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}    
+        >
+        </motion.span>  
     </div>
   )
 }

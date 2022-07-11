@@ -15,6 +15,8 @@ import { TechMenu } from "./styles";
 
 import TechCard from "./TechCard";
 
+import { motion } from "framer-motion";
+
 const Techs: React.FC = () => {
   const [filter, setFilter] = useState<string | null>("front-end");
   const [filterList, setFilterList] = useState<iTech[] | null>(null);
@@ -31,74 +33,80 @@ const Techs: React.FC = () => {
 
   return (
     <section>
-      <Container
-        containerPadding="sm"
-        paddingTop={{ xl: "4rem", lg: "3rem", md: "2rem" }}
-        paddingBottom={{ xl: "5rem", lg: "4rem", md: "2rem" }}
+      <motion.div
+        initial={{ opacity: 0, y: 200, scale: 0.8}}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: .8 }}
+        viewport={{ once: true }}
       >
-        <ThemeTitle titleTag="h2" titleSize="title1" titleColor="white">
-          Minhas Hardskills
-        </ThemeTitle>
-
-        <ThemeTextBox gap="1rem" textBoxMargin={{ top: "1rem" }}>
-          <ThemeParagraph paragraphColor="white">
-            Minha jornada me moldou um profissional muito versatil,
-            tenho conhecimentos nas áreas de Marketing, UI/UX, Programação e
-            Ensino.
-          </ThemeParagraph>
-          <ThemeTitle titleTag="h3" titleColor="primary" titleSize="subtitle">
-            Segue abaixo a lista das Hard Skills que mais utilizo hoje na minha
-            atuação profissional:
-          </ThemeTitle>
-        </ThemeTextBox>
-
-        <TechMenu>
-          {techCategories.map((tech) => (
-            <li key={tech}>
-              <ThemeButton
-                buttonSize="sm"
-                buttonStyle="outline2"
-                buttonActive={
-                  filter?.toLowerCase() === tech.toLowerCase() ? true : false
-                }
-                onClick={() => setFilter(tech.toLowerCase())}
-              >
-                {tech}
-              </ThemeButton>
-            </li>
-          ))}
-
-          <ThemeButton
-            buttonSize="sm"
-            buttonStyle="outline2"
-            buttonActive={!filter}
-            onClick={() => setFilter(null)}
-          >
-            Todas
-          </ThemeButton>
-        </TechMenu>
-        
-        <FlexRow
-          gap={{ default: '2rem'}}
-          alignItems={{ default: "space-between" }}
-          flexWrap={{ default: "wrap" }}
-          rowMargin={{ top: "2rem" }}
-          rowTag="ul"
+        <Container
+          containerPadding="sm"
+          paddingTop={{ xl: "4rem", lg: "3rem", md: "2rem" }}
+          paddingBottom={{ xl: "5rem", lg: "4rem", md: "2rem" }}
         >
-          {(filterList ? filterList : techList).map((tech) => (
-            <Col
-              key={tech.name}
-              size={{
-                xs: "100%",
-                md: "(100% - 2rem)/2",
-                lg: "(100% - 4rem)/3",
-              }}
+          <ThemeTitle titleTag="h2" titleSize="title1" titleColor="white" tabIndex={0}>
+            Minhas Hardskills
+          </ThemeTitle>
+
+          <ThemeTextBox gap="1rem" textBoxMargin={{ top: "1rem" }}>
+            <ThemeParagraph paragraphColor="white">
+              Minha jornada me moldou um profissional muito versatil, tenho
+              conhecimentos nas áreas de Marketing, UI/UX, Programação e Ensino.
+            </ThemeParagraph>
+            <ThemeTitle titleTag="p" titleColor="primary" titleSize="subtitle">
+              Segue abaixo a lista das Hard Skills que mais utilizo hoje na
+              minha atuação profissional:
+            </ThemeTitle>
+          </ThemeTextBox>
+
+          <TechMenu>
+            {techCategories.map((tech) => (
+              <li key={tech}>
+                <ThemeButton
+                  buttonSize="sm"
+                  buttonStyle="outline2"
+                  buttonActive={
+                    filter?.toLowerCase() === tech.toLowerCase() ? true : false
+                  }
+                  onClick={() => setFilter(tech.toLowerCase())}
+                >
+                  {tech}
+                </ThemeButton>
+              </li>
+            ))}
+
+            <ThemeButton
+              buttonSize="sm"
+              buttonStyle="outline2"
+              buttonActive={!filter}
+              onClick={() => setFilter(null)}
             >
-              <TechCard tech={tech} />
-            </Col>
-          ))}
-        </FlexRow>
-      </Container>
+              Todas
+            </ThemeButton>
+          </TechMenu>
+
+          <FlexRow
+            gap={{ default: "2rem" }}
+            alignItems={{ default: "space-between" }}
+            flexWrap={{ default: "wrap" }}
+            rowMargin={{ top: "2rem" }}
+            rowTag="ul"
+          >
+            {(filterList ? filterList : techList).map((tech) => (
+              <Col
+                key={tech.name}
+                size={{
+                  xs: "100%",
+                  md: "(100% - 2rem)/2",
+                  lg: "(100% - 4rem)/3",
+                }}
+              >
+                <TechCard tech={tech} />
+              </Col>
+            ))}
+          </FlexRow>
+        </Container>
+      </motion.div>
     </section>
   );
 };

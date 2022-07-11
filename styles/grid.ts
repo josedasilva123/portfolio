@@ -65,7 +65,7 @@ export const Container = styled(BaseContainer)`
     switch (props.containerSize) {
       case "lg":
         return css`
-          max-width: 1280px;
+          max-width: 1320px;
         `;
       case "sm":
         return css`
@@ -73,7 +73,7 @@ export const Container = styled(BaseContainer)`
         `;
       default:
         return css`
-          max-width: 1120px;
+          max-width: 1240px;
         `;
     }
   }}
@@ -152,6 +152,7 @@ export const FlexRow = styled(BaseFlexRow)`
 export const Col = styled(BaseCol)`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   width: calc(
     ${(props) => getSizeValue(props.size, props.size?.xl, LargerDefault)}
   );

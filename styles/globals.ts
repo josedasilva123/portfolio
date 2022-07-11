@@ -89,15 +89,26 @@ export const DefaultFonts = createGlobalStyle`
     --PrimaryFont: 'Roboto Mono', monospace;
     --SecondaryFont: 'Roboto', sans-serif;
   } 
+
   a{
     color: unset;
   }
+
   h1, h2, h3, h4, h5, h6{
     font-family: var(--PrimaryFont);
   }
+
   *{
     font-family: var(--SecondaryFont);
   }
+
+  *:focus{
+    outline-color: var(--colorPrimary);
+    outline-style: dotted;
+    outline-offset: 6px;
+    outline-width: 3px;
+  }
+
 `;
 
 //Configuração de reset + configurações globais do projeto
@@ -112,17 +123,26 @@ export const GlobalStyle = createGlobalStyle`
     //Configuração de formulário
     --InputBorder: none;
   }
+
   *{
       box-sizing: border-box;
       margin: 0;
       padding: 0;
   }
+
   a{
+    display: inline-flex;
     text-decoration: none;
   }
+
   ul, ol, li{
     list-style: none;
   }  
+
+  div{
+    width: 100%;  
+  }
+
   button {
     cursor: pointer;
     padding: 0;

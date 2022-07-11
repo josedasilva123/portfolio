@@ -8,7 +8,7 @@ interface iLogo {
 
 const Logo: React.FC<iLogo> = ({ className }) => {
   return (
-    <Link href="/">
+    <Link href="/" tabIndex={0}>
       <a>
         <StyledLogo className={className}>
           &lt;Alex<b>Conder</b>/&gt;
