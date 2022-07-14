@@ -100,7 +100,7 @@ export const ThemeLabel = styled(BaseLabel)`
 
 export const ThemeParagraph = styled(BaseParagraph)`
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
 
     line-height: 1.7;
 
@@ -140,7 +140,7 @@ export const ThemeList = styled(BaseList)`
     
     font-size: 20px;
 
-    font-weight: 300;
+    font-weight: 400;
 
     padding-left: ${(props) => props.paddingLeft};    
 
