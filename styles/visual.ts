@@ -62,8 +62,6 @@ export const PercentBar = styled(BasePercentBar)`
   width: 100%;
   height: 6px;
 
-  background: var(--colorDarkPrimary);
-
   border-radius: var(--PercentBarRadius);
   
   transition: 0.3s;
