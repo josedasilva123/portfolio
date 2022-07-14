@@ -84,7 +84,7 @@ const SoftSkills: React.FC = () => {
                 justifyContent={{ default: "center" }}
               >
                 <Image
-                  src="/SoftSkills.svg"
+                  src="/SoftSkills2.svg"
                   width={500}
                   height={500}
                   alt="Gamer"

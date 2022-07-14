@@ -29,7 +29,12 @@ const Personal: React.FC<iGithubRepoProps> = ({ repo, error }) => {
           flexDirection={{ lg: "row", md: "column" }}
         >
           <Col size={{ lg: "40%", md: "100%" }}>
-            <ThemeTitle titleTag="h3" titleSize="title2" titleColor="white" tabIndex={0}>
+            <ThemeTitle
+              titleTag="h3"
+              titleSize="title2"
+              titleColor="white"
+              tabIndex={0}
+            >
               Projeto Pessoais
             </ThemeTitle>
             <ThemeTitle titleTag="p" titleSize="subtitle" titleColor="primary">
@@ -114,12 +119,17 @@ const Personal: React.FC<iGithubRepoProps> = ({ repo, error }) => {
                 >
                   {r.name}
                 </ThemeTitle>
-                <a href={r.html_url} target="_blank">
-                  <ThemeButton buttonStyle="outline2" buttonSize="md">
-                    <MdLink size={24} />
-                    Acessar projeto
-                  </ThemeButton>
-                </a>
+
+                <ThemeButton
+                  buttonStyle="outline2"
+                  buttonSize="md"
+                  link={true}
+                  href={r.html_url}
+                  target="_blank"
+                >
+                  <MdLink size={24} />
+                  Acessar projeto
+                </ThemeButton>
               </ThemeCard>
             </Col>
           ))}
@@ -128,12 +138,16 @@ const Personal: React.FC<iGithubRepoProps> = ({ repo, error }) => {
           justifyContent={{ default: "center" }}
           rowMargin={{ top: "2rem" }}
         >
-          <a href="https://github.com/josedasilva123/" target="_blank">
-            <ThemeButton buttonSize="md" buttonStyle="solid1">
-              <FaGithub size={24}></FaGithub>
-              Acesse o meu Github
-            </ThemeButton>
-          </a>
+          <ThemeButton
+            buttonSize="md"
+            buttonStyle="solid1"
+            link={true}
+            href="https://github.com/josedasilva123/"
+            target="_blank"
+          >
+            <FaGithub size={24}></FaGithub>
+            Acesse o meu Github
+          </ThemeButton>
         </FlexRow>
       </Container>
     </motion.div>

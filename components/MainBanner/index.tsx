@@ -47,7 +47,7 @@ const MainBanner: React.FC = () => {
                   transition={{ duration: 0.6 }}
                 >
                   <ThemeTitle
-                    titleTag="h2"
+                    titleTag="h1"
                     titleColor="white"
                     titleSize="headline"
                     tabIndex={0}
@@ -117,8 +117,8 @@ const MainBanner: React.FC = () => {
                     right: 0,
                     bottom: 0,
                   }}
-                  src="/CodeDeveloper.svg"
-                  alt="Fullstack Developer"
+                  src="/AstronautHelmet.svg"
+                  alt="Astronaut Helmet"
                 />
               </FlexRow>
             </Col>

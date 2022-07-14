@@ -41,12 +41,10 @@ const ProjectCard: React.FC<iProjectCard> = ({ project }) => {
       >
         {project.name}
       </ThemeTitle>
-      <a href={project.link} target="_blank">
-        <ThemeButton buttonStyle="outline2" buttonSize="md">
+        <ThemeButton buttonStyle="outline2" buttonSize="md" link={true} href={project.link}>
           <MdLink size={24} />
           Acessar projeto
         </ThemeButton>
-      </a>
     </ThemeCard>
     </motion.div>
     

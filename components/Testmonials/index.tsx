@@ -66,8 +66,8 @@ const Testmonials = () => {
             {testShortList.length > 0 ? (
               <>
                 {testShortList.map((testmonial, index) => (
-                  <Col key={index} size={{ lg: "(100% - 4rem)/3", md: "100%" }}>                  
-                      <TestmonialCard testmonial={testmonial} />
+                  <Col key={index} size={{ lg: "(100% - 4rem)/3", md: "100%" }}>
+                    <TestmonialCard testmonial={testmonial} />
                   </Col>
                 ))}
               </>
@@ -98,11 +98,15 @@ const Testmonials = () => {
               >
                 <MdSend size={24} /> Enviar depoimento
               </ThemeButton>
-              <Link href="/depoimentos">
-                <ThemeButton buttonStyle="outline1" buttonSize="lg">
-                  Ver todos os depoimentos
-                </ThemeButton>
-              </Link>
+              
+              <ThemeButton
+                buttonStyle="outline1"
+                buttonSize="lg"
+                link={true}
+                href="/depoimentos"
+              >
+                Ver todos os depoimentos
+              </ThemeButton>
             </FlexRow>
           </FlexRow>
         </Container>

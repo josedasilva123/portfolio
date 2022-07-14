@@ -43,10 +43,10 @@ const AboutMe: React.FC = () => {
                   justifyContent={{ default: "center" }}
                 >
                   <Image
-                    src="/Gamer.svg"
+                    src="/Gamer2.svg"
                     width={500}
                     height={500}
-                    alt="Gamer"
+                    alt="Gamer2"
                   />
                 </FlexRow>
               </motion.div>

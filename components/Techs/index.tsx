@@ -73,16 +73,7 @@ const Techs: React.FC = () => {
                   {tech}
                 </ThemeButton>
               </li>
-            ))}
-
-            <ThemeButton
-              buttonSize="sm"
-              buttonStyle="outline2"
-              buttonActive={!filter}
-              onClick={() => setFilter(null)}
-            >
-              Todas
-            </ThemeButton>
+            ))}            
           </TechMenu>
 
           <FlexRow
