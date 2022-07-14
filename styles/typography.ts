@@ -99,7 +99,8 @@ export const ThemeLabel = styled(BaseLabel)`
 `
 
 export const ThemeParagraph = styled(BaseParagraph)`
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 300;
 
     line-height: 1.7;
 
@@ -109,6 +110,12 @@ export const ThemeParagraph = styled(BaseParagraph)`
     margin-bottom: ${(props) => props.paragraphMargin?.bottom};
     //Cores do parágrafo
     ${(props) => fontColor(props.paragraphColor)}   
+    b{
+        font-weight: 500;
+    }
+    @media (max-width: 800px){
+        font-size: 19px;
+    }
 `
 
 export const ThemeTextBox = styled(BaseTextBox)`
@@ -130,8 +137,10 @@ export const ThemeList = styled(BaseList)`
     gap: ${(props) => props.gap};
 
     line-height: 1.4;
+    
+    font-size: 20px;
 
-    font-weight: 500;
+    font-weight: 300;
 
     padding-left: ${(props) => props.paddingLeft};    
 
@@ -143,5 +152,9 @@ export const ThemeList = styled(BaseList)`
 
     li{
         list-style: ${(props) => props.listStyle};
+    }
+
+    @media (max-width: 800px){
+        font-size: 19px;
     }
 `
