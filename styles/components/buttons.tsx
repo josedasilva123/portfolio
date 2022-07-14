@@ -2,7 +2,10 @@ import React from 'react'
 
 interface iButton{
     className?: string;
-    disabled?: boolean
+    disabled?: boolean;
+    link?: boolean;
+    href?: string;
+    target?: "_blank";
     children: React.ReactNode;
     buttonActive?: boolean;
     fullWidth?: boolean;
@@ -12,11 +15,20 @@ interface iButton{
     onClick?: () => void;
 }
 
-export const BaseButton: React.FC<iButton> = ({children, className, disabled, onClick, type }) => {
+export const BaseButton: React.FC<iButton> = ({children, className, disabled, onClick, type, link, href, target }) => {
   return (
-    <button className={className} disabled={disabled} onClick={onClick} type={type}>
+    <>
+      {link ? (
+        <a className={className} href={href} target={target}>
+          {children}
+        </a>
+      ): (
+        <button className={className} disabled={disabled} onClick={onClick} type={type}>
         {children}
     </button>
+      )}
+    </>
+    
   )
 }
 
