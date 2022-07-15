@@ -1,5 +1,8 @@
 import Image from "next/image";
-import React, { useEffect } from "react";
+
+import React, { useContext } from "react";
+import { GlobalContext } from "../../contexts/GlobalContext";
+
 import { Col, Container, FlexRow } from "../../styles/grid";
 import {
   ThemeLabel,
@@ -11,6 +14,7 @@ import {
 import { motion } from "framer-motion";
 
 const AboutMe: React.FC = () => {
+  const { mobile } = useContext(GlobalContext);
   return (
     <section id="sobre">
       <motion.div
@@ -53,7 +57,7 @@ const AboutMe: React.FC = () => {
             </Col>
             <Col size={{ default: "100%" }}>
               <motion.div
-                initial={{ opacity: 0, x: 100, y: 100}}
+                initial={{ opacity: 0, x: (mobile ? 0 : 100), y: 100}}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
+
 import { ThemeButton } from "../../styles/buttons";
 import { Col, Container, FlexRow } from "../../styles/grid";
 import {
@@ -8,9 +9,14 @@ import {
   ThemeTitle,
 } from "../../styles/typography";
 import { MainBannerGrid } from "./styles";
+
+import { GlobalContext } from "../../contexts/GlobalContext";
+
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const MainBanner: React.FC = () => {
+  const { mobile } = useContext(GlobalContext);
   return (
     <MainBannerGrid>
       <motion.div
@@ -60,7 +66,7 @@ const MainBanner: React.FC = () => {
                   titleTag="p"
                   titleColor="primary"
                   titleSize="subtitle"
-                  titleMargin={{ top: ".2rem", bottom: ".6rem" }}               
+                  titleMargin={{ top: ".2rem", bottom: ".6rem" }}
                 >
                   UX e desenvolvimento caminham juntos!
                 </ThemeTitle>
@@ -75,7 +81,7 @@ const MainBanner: React.FC = () => {
                 </ThemeParagraph>
 
                 <motion.div
-                  style={{ width: "100%"}}
+                  style={{ width: "100%" }}
                   initial={{ opacity: 0, y: 200 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -107,19 +113,28 @@ const MainBanner: React.FC = () => {
                 alignItems={{ default: "center" }}
                 justifyContent={{ default: "center" }}
               >
-                <motion.img
-                  width={500}
-                  height={500}
-                  drag
-                  dragConstraints={{
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                  }}
-                  src="/AstronautHelmet.svg"
-                  alt="Astronaut Helmet"
-                />
+                {mobile ? (
+                  <Image
+                    width={500}
+                    height={500}
+                    src="/AstronautHelmet.svg"
+                    alt="Astronaut Helmet"
+                  />
+                ) : (
+                  <motion.img
+                    width={500}
+                    height={500}
+                    drag
+                    dragConstraints={{
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                    }}
+                    src="/AstronautHelmet.svg"
+                    alt="Astronaut Helmet"
+                  />
+                )}
               </FlexRow>
             </Col>
           </FlexRow>

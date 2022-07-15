@@ -5,6 +5,7 @@ interface iGlobalContext {
   darkMode: boolean;
   toggleDarkMode: () => void;
   mobile: boolean;
+  loading: boolean;
 }
 
 interface iGlobalStorage {
@@ -15,10 +16,12 @@ export const GlobalContext = createContext<iGlobalContext>({
     darkMode: true,
     toggleDarkMode: () => {},
     mobile: true,
+    loading: true,
 });
 
 export const GlobalStorage: React.FC<iGlobalStorage> = ({ children }) => {
   //Mobile
+  const [loading, setLoading] = useState(true);
   const [mobile, setMobile] = useState(false);
   //Dark Mode DEFAULT
   const [darkMode, setDarkMode] = useState(true);
@@ -31,6 +34,7 @@ export const GlobalStorage: React.FC<iGlobalStorage> = ({ children }) => {
       } else {
         setMobile(false);
       }
+      setLoading(false);
     }
     //Checa a resolução na montagem e aplica o evento a verificação a janela
     checkMobile();
@@ -59,7 +63,7 @@ export const GlobalStorage: React.FC<iGlobalStorage> = ({ children }) => {
   }
 
   return (
-    <GlobalContext.Provider value={{ darkMode, toggleDarkMode, mobile }}>
+    <GlobalContext.Provider value={{ darkMode, toggleDarkMode, mobile, loading }}>
       {children}
     </GlobalContext.Provider>
   );

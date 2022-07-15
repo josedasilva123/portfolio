@@ -60,20 +60,25 @@ const Footer = () => {
                 </ThemeParagraph>
 
                 <FlexRow gap={{ default: "1rem" }} rowMargin={{ top: "4rem" }}>
-                  <a
+                  <ThemeButton
+                    buttonSize="round"
+                    buttonStyle="link"
+                    link={true}
                     href="https://www.linkedin.com/in/alex-conder-b015a71a4/"
                     target="_blank"
                   >
-                    <ThemeButton buttonSize="round" buttonStyle="link">
-                      <FaLinkedin size={24} />
-                    </ThemeButton>
-                  </a>
+                    <FaLinkedin size={24} />
+                  </ThemeButton>
 
-                  <a href="https://wa.me/5541991861989" target="_blank">
-                    <ThemeButton buttonSize="round" buttonStyle="link">
-                      <FaWhatsapp size={24} />
-                    </ThemeButton>
-                  </a>
+                  <ThemeButton
+                    buttonSize="round"
+                    buttonStyle="link"
+                    link={true}
+                    href="https://wa.me/5541991861989"
+                    target="_blank"
+                  >
+                    <FaWhatsapp size={24} />
+                  </ThemeButton>
                 </FlexRow>
               </motion.div>
             </Col>
@@ -84,7 +89,7 @@ const Footer = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-              <ContactForm />
+                <ContactForm />
               </motion.div>
             </Col>
           </FlexRow>
