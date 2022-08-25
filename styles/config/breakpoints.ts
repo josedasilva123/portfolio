@@ -1,6 +1,7 @@
 //Configure os breakpoints
 export type tSizeList = {
     us?: string | number;
+    xss?: string | number;
     xs?: string | number;
     sm?: string | number;
     md?: string | number;
@@ -10,7 +11,7 @@ export type tSizeList = {
 }
 
 interface iBreakpoint {
-  name: "xl" | "lg" | "md" | "sm" | "xs" | "us";
+  name: "xl" | "lg" | "md" | "sm" | "xs" | "xss" | "us";
   break: number;
   reverse: boolean;
 }
@@ -33,8 +34,8 @@ export const breakpoints: iBreakpoint[] = [
   },
   {
     name: "xs",
-    break: 425,
-    reverse: true,
+    break: 600,
+    reverse: true
   },
   {
     name: "us",
@@ -42,3 +43,4 @@ export const breakpoints: iBreakpoint[] = [
     reverse: true,
   },
 ];
+

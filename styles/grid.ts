@@ -134,7 +134,6 @@ export const FlexRow = styled(BaseFlexRow)`
               props.flexDirection?.[breakpoint.name],
               breakpoint.reverse ? SmallerDefault : LargerDefault
             )};
-
             padding: ${getSizeValue(
               props.rowPadding,
               props.rowPadding?.[breakpoint.name],
